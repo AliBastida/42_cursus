@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 18:54:11 by abastida          #+#    #+#             */
-/*   Updated: 2022/09/23 13:02:03 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/03 14:03:39 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,6 @@ int	main(int argc, char **argv)
 	mlx_hook(game.mlx_win, 2, 0, ft_movements, &game);
 	mlx_loop(game.mlx);
 
+	// Aqui esta Valerio
 }
 
