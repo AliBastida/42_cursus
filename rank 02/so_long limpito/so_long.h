@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 19:45:12 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/03 11:34:06 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/03 15:49:55 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,10 @@ int 	ft_movements(int keycode, t_game *game);
 char    ft_get_direction(int keycode);
 void	init_player_position(t_game *game);
 int 	check_left (t_game *game);
+int 	check_right(t_game *game);
+int 	check_up(t_game *game);
+int 	check_down(t_game *game);
+
 
 // MAPA
 int		create_matrix(t_game *game);
