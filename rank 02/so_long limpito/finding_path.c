@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 11:12:21 by abastida          #+#    #+#             */
-/*   Updated: 2022/09/29 13:37:11 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/03 19:51:34 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,6 @@ void ft_print_map(t_game *game)
 
  int find_path(t_game *game, int y, int x)
 {
-    int collectible_tmp;
-
-    collectible_tmp = game->there_is_c;
     if ((game->is_exit == 1) || (game->map[y][x] == 'V'))
         return (IS_TRUE);
     if (game->map[y][x] == '1')

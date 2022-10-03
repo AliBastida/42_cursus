@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:37:29 by abastida          #+#    #+#             */
-/*   Updated: 2022/09/29 15:33:38 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/03 19:50:44 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,7 @@ int	open_map(char *filename)
 int	parse_the_map(int fd, t_game *game)
 {
 	char *line;
-	int take_more_lines;
 
-	take_more_lines = 1;
 	game->map_raw = NULL;
 
 	//while ((take_more_lines) || (!line))
@@ -150,11 +148,9 @@ int the_map_is_rectangular(t_game *game)
 int	map_is_surrounded_by_one(t_game *game)
 {
 	int y;
-	int i;
 	int x;
 
 	y = game->map_height;
-	i = 0;
 	x = 0;
 	
 	while (game->map_width > x)
