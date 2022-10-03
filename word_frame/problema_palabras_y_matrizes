@@ -1,0 +1,106 @@
+
+void print_up_or_down_line(int max_word_lenght)
+{
+	int i;
+
+	i = 0;
+	while(i < lenght_maximo + 2)
+	{
+		write(1, "*", 1);
+		i++;
+	}
+}
+
+int max_word_lenght(char **palabras)
+{
+	int max_lenght;
+	int tmp;
+	int i;
+
+	max_lenght = 0;
+	tmp = 0;
+	i = 0;
+	while(palabras[i])
+	{
+		tmp = strlen(palabras[i]);
+		if(tmp > max_lenght)
+			max_lenght = tmp;
+		i++;
+	}
+	return(max_lenght);
+}
+
+	//ahora tenemos esto:
+	//palabras[0] = "hola"
+	//palabras[1] = "que"
+	// palabras[2] = "tal"
+	// palabras[3] = NULL
+
+	//Hacerme una funcion que me reccorra el array palabras, y me mire cual es el lenght maximo de una palabra
+int main()
+{
+
+	char *frase;
+	char **palabras;
+	int lenght_maximo;
+	int i;
+	
+	i = 0;
+	lenght_maximo =  0;
+	
+	palabras = ft_split(frase, ' ');
+	lenght_maximo = max_word_lenght(palabras);
+
+	print_up_or_down_line(lenght_maximo);
+	i = 0;
+	while(palabras[i])
+	{
+		printf("*%s*", palabras[i]);
+		i++;
+	}
+	print_up_or_down_line(lenght_maximo);
+}
+
+
+//char * < ---- array
+//char *nombre = "Raul";
+//char **nombres; < --- Matrix (o array de arrays orray bidimensinal)
+
+
+//una matriz de caracteres de 3x3
+	a b c 
+	d f a 
+	b f g   
+
+char **matriz;
+
+matriz = malloc(sizeof(char *) * (3 + 1));   // <----- el eje de las X (Solo son punteros que apuntan a las columnas)
+
+while(i < 3)
+{
+	matriz[i] = malloc(sizeof(char) * (3 + 1)) //construyo las columnas Y   "Que"  y[0] = 1 , y[1] = u,   y[1] = e
+	//las columnas son de malloc char, porque son quienes contienen los chars
+}
+
+
+//una matriz de caracteres de 3x3
+
+	h q t 
+	o u a 
+	l e l   
+    a
+    * * * NULL  < ----- es el eje de las x
+
+printf("%s", matrix[0])  <----- hola
+printf("%c", matrix[0][0])  <----- h
+printf("%c", matrix[0][1])  <----- o
+
+ matriz[0][2]
+ matriz[1][1]
+
+  x
+  *    ->   char *y = hola
+  *    ->   char *y = que
+  *    ->   char *y = tal
+  NULL
+
