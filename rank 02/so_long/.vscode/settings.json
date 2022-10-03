@@ -1,0 +1,9 @@
+{
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/Users/abastida/Desktop/42 cursus/rank 02/so_long",
+            "binaryPath": "/Users/abastida/Desktop/42 cursus/rank 02/so_long/so_long",
+            "binaryArgs": ["map.ber"]
+        }
+    ]
+}
