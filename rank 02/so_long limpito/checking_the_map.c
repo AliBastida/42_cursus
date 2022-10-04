@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:51:33 by abastida          #+#    #+#             */
-/*   Updated: 2022/09/29 10:45:34 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/04 11:36:04 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,10 @@ int	check_filename_is_valid(char *filename)
 
 	error = 0;
 	length = ft_strlen(filename); 
-	//si no  ocupa almenos 5 caracteres (x.ber)
 	if(length < 5)
 		error = 1; 
 	else
 	{
-		//Termina en .ber
 		if (filename[length -1] != 'r')
 			error = 1;
 		else if (filename[length -2] != 'e')
@@ -51,6 +49,7 @@ int	check_filename_is_valid(char *filename)
 		else if (filename[length -4] != '.')
 			error = 1;
 	}
+
 	if(error == 1)
 	{
 		write(2, "Error Invalid Filename\n", 24);
@@ -100,6 +99,5 @@ int check_params_are_valids(int argc, char **argv)
 		return(0);
 	if(!check_filename_is_valid(argv[1]))
 		return(0);
-
 	return(1);
 }

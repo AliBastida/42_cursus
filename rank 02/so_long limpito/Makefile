@@ -6,16 +6,16 @@
 #    By: abastida <abastida@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/10 19:32:04 by abastida          #+#    #+#              #
-#    Updated: 2022/10/03 12:11:29 by abastida         ###   ########.fr        #
+#    Updated: 2022/10/04 14:46:34 by abastida         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 CC = gcc
 RM = rm -fr
-CFLAGS = -g -Wall -Werror -Wextra -MMD -fsanitize=address -g3
+CFLAGS = -Wall -Werror -Wextra -MMD -fsanitize=address -g3
 
-SRC = so_long.c map_utils.c matrix_utils.c movements.c finding_path.c images.c checking_the_map.c about_characters.c get_next_line .c get_next_line_utils.c exit.c print_map.c check_move.c
+SRC = so_long.c map_utils.c matrix_utils.c movements.c finding_path.c images.c checking_the_map.c about_characters.c get_next_line .c get_next_line_utils.c exit.c print_map.c check_move.c print_move.c
 
 OBJ = $(addprefix .,$(addsuffix .o,$(basename $(SRC))))
 

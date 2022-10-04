@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:48:19 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/03 10:32:52 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/04 18:04:35 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,7 @@ void	struct_init(t_game *game)
 int main(int argc, char **argv)
 {
     t_game game;
-	//void *img;
-	//void *img2;
-	//void *img3;
-	//int img_width;
-	//int img_height;
-
+	
 	struct_init (&game);
     if(!check_params_are_valids(argc, argv))
         return(0);
@@ -63,14 +58,8 @@ int main(int argc, char **argv)
 	
 	upload_img(&game);
 	print_map(&game);
-	/*img = mlx_xpm_file_to_image(game.mlx, GRASS, &img_width, &img_height);
-	mlx_put_image_to_window(game.mlx, game.mlx_win, img, 0, 0);
-	img2 = mlx_xpm_file_to_image(game.mlx, WALL, &img_width, &img_height);
-	mlx_put_image_to_window(game.mlx, game.mlx_win, img, 31, 0);
-	img3 = mlx_xpm_file_to_image(game.mlx, FRONT_P, &img_width, &img_height);
-	mlx_put_image_to_window(game.mlx, game.mlx_win, img, 62, 0);*/
-	
 	mlx_hook(game.mlx_win, 2, 0, ft_movements, &game);
 	mlx_loop(game.mlx);
+	//mlx_destroy(game.mlx);
 	
 }

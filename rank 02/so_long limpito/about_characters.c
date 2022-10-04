@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 16:17:51 by abastida          #+#    #+#             */
-/*   Updated: 2022/09/26 14:42:53 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/04 15:52:33 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,26 +44,27 @@ int	characters_are_valid(t_game *game)
 
 int	characters_needed(t_game *game)
 {
-	int	there_is_c;
+	
 	int there_is_p;
 	int there_is_e;
 	int i;
 
-	there_is_c = 0;
+	game->there_is_c = 0;
 	there_is_p = 0;
 	there_is_e = 0;
    	i = 0;
 	while (game->map_raw[i] != '\0')
 	{
 		if(game->map_raw[i] == 'C')
-			there_is_c++;
+			game->there_is_c++;
 		else if (game->map_raw[i] == 'E')
 			there_is_e++;
 		else if (game->map_raw[i] == 'P')
 			there_is_p++; 
 		i++;
 	}
-	if (there_is_p == 0 || there_is_c == 0 || there_is_e == 0)
+	game->num_collectives = game->there_is_c;
+	if (there_is_p == 0 || game->there_is_c == 0 || there_is_e == 0)
 	{
 		write (2, "Error: Not found all needed characters\n", 39); 
 		return (0);

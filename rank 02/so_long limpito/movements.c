@@ -6,32 +6,47 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:52:51 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/03 15:50:25 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/04 18:28:08 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-
-
 int ft_movements(int keycode, t_game *game)
 {
     game->new_position = keycode;
+    
+    printf("There num_collectives vale = %d\n", game->num_collectives);
+    
     if (game->new_position ==  W)
-        check_up(game);
+    {
+        if(check_up(game))
+            print_up(game);
+    }
+
         //printf("ME MUEVO PARA ARRIBA\n");// en lugar del printf, llamo a la función check move y print move
     if (game->new_position ==  S)
-        check_down(game);//printf("ME MUEVO PARA ABAJO\n");
+    {
+        if(check_down(game)) //printf("ME MUEVO PARA ABAJO\n");*/
+            print_down(game);
+    }
     if (game->new_position == A)
-        check_left(game);
-        //printf("ME MUEVO PARA LA IZQUIERDA\n");
+    {
+        if(check_left(game))
+            print_left(game);
+    }
     if (game->new_position == D)
-        check_right(game);        //printf("ME MUEVO PARA LA DERECHA\n");
+    {
+        if(check_right(game))
+            print_right(game);
+    }
+
     if (game->new_position == ESC)
     {
-           printf("ADIOS\n");
+            printf("ADIOS\n");
            mlx_destroy(game->mlx);
            exit (0);
     }
+    check_is_exit(game);
     return (0);
 }

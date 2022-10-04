@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:04:02 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/03 15:52:05 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/04 18:26:09 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,54 +22,94 @@
  * 
  */
 
-int check_left(t_game *game)
+int check_is_exit(t_game *game)
 {
-    if (game->map[game->player_y][game->player_x - 1] == '0')
+    if ((game->num_collectives == 0) && ((game->map[game->player_y][game->player_x-1] == 'E') ||
+        (game->map[game->player_y][game->player_x+1] == 'E')||
+        (game->map[game->player_y-1][game->player_x] == 'E')||
+        (game->map[game->player_y+1][game->player_x] == 'E')))
+        {
+            
+            write (1, "\e[1;35mYOU HAVE WIN \e[0m\n", 25);
+            return (0);
+        }
+    return (1);
+}
+
+int check_left (t_game *game)
+{
+    printf("pressed left\n");
+    if (game->new_position == A)
     {
-        printf("nueva posición: game->player_x %d y game->player_x-1 %d \n", game->player_x, game->player_x-1);
-        game->map[game->player_y][game->player_x] = '0';
-        game->map[game->player_y][game->player_x--] = 'P';
-        printf("nueva posición: game->player_x %d y game->player_x-1 %d \n", game->player_x, game->player_x-1);
-        return (1);
+        if ((game->map[game->player_y][game->player_x-1] != '1') && (game->map[game->player_y][game->player_x-1] != 'E'))
+        {
+            if(game->map[game->player_y][game->player_x-1] == 'C')
+                game->num_collectives--;
+            game->player_x--;
+            game->map[game->player_y][game->player_x] = 'P';
+            game->map[game->player_y][game->player_x + 1] = '0';
+            return (1);
+        }
     }
     return (0);
 }
 
-int check_right(t_game *game)
+int check_right (t_game *game)
 {
-    if (game->map[game->player_y][game->player_x + 1] == '0')
+        printf("pressed right\n");
+    if (game->new_position == D)
     {
-        printf("nueva posición: game->player_x %d y game->player_x+1 %d \n", game->player_x, game->player_x+1);
-        game->map[game->player_y][game->player_x] = '0';
-        game->map[game->player_y][game->player_x++] = 'P';
-        printf("nueva posición: game->player_x %d y game->player_x-1 %d \n", game->player_x, game->player_x-1);
-        return (1);
+        if ((game->map[game->player_y][game->player_x+1] != '1') && (game->map[game->player_y][game->player_x+1] != 'E'))
+        {
+            if(game->map[game->player_y][game->player_x+1] == 'C')
+                game->num_collectives--;
+            game->player_x++;
+            game->map[game->player_y][game->player_x] = 'P';
+            game->map[game->player_y][game->player_x - 1] = '0';
+            return (1);
+        }
     }
     return (0);
 }
 
-int check_up(t_game *game)
+int check_up (t_game *game)
 {
-    if (game->map[game->player_y - 1][game->player_x] == '0')
+    printf("pressed up\n");
+    if (game->new_position == W)
     {
-        printf("nueva posición: game->player_y %d y game->player_y - 1 %d \n", game->player_y, game->player_y-1);
-        game->map[game->player_y][game->player_x] = '0';
-        game->map[game->player_y--][game->player_x] = 'P';
-        printf("nueva posición: game->player_y %d y game->player_y - 1 %d \n", game->player_y, game->player_y-1);
-        return (1);
+        if ((game->map[game->player_y - 1][game->player_x] != '1') && (game->map[game->player_y - 1][game->player_x] != 'E'))
+        {
+            if(game->map[game->player_y - 1][game->player_x] == 'C')
+                game->num_collectives--;
+            game->player_y--;
+            game->map[game->player_y][game->player_x] = 'P';
+            game->map[game->player_y + 1][game->player_x] = '0';
+            return (1);
+        }
     }
     return (0);
 }
 
-int check_down(t_game *game)
+int check_down (t_game *game)
 {
-    if (game->map[game->player_y + 1][game->player_x] == '0')
+    printf("pressed down\n");
+    printf("Posicion del player y: %d, x: %d\n", game->player_y , game->player_x);
+    if (game->new_position == S)
     {
-        printf("nueva posición: game->player_y %d y game->player_y+1 %d \n", game->player_y, game->player_y+1);
-        game->map[game->player_y][game->player_x] = '0';
-        game->map[game->player_y++][game->player_x] = 'P';
-        printf("nueva posición: game->player_y %d y game->player_y+1 %d \n", game->player_y, game->player_y+1);
-        return (1);
+        printf("Entro primer if\n");
+        printf("Quiero ir a y: %d, x: %d\n", game->player_y + 1, game->player_x);
+        printf("En esa posicion tenemos: %c\n", game->map[game->player_y + 1][game->player_x]);
+        if ((game->map[game->player_y+1][game->player_x] != '1') && (game->map[game->player_y+1][game->player_x] != 'E'))//Si me puedo mover porque lo que hay es un 0
+        {
+            if(game->map[game->player_y+1][game->player_x+1] == 'C')
+                game->num_collectives--;
+                printf("Entro segundo if\n");
+            game->player_y++;  //Ahora me muevo y actualizo la posicion y del jugador
+            game->map[game->player_y][game->player_x] = 'P'; //Actualizo la informacion del mapa
+            game->map[game->player_y - 1][game->player_x] = '0'; //Actualizo la informacion del mapa
+            return (1);
+
+        }
     }
     return (0);
 }

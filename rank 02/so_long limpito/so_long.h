@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 19:45:12 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/03 15:49:55 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/04 15:52:11 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,11 @@ typedef struct s_game
 	int		player_y;
 	int		new_position;
 	int 	there_is_c;
+	int     num_collectives;
 	int		is_path;
 	int		is_exit;
+	int height;
+	int width;
 }	t_game;
 
 // UTILS
@@ -88,6 +91,7 @@ int 	check_left (t_game *game);
 int 	check_right(t_game *game);
 int 	check_up(t_game *game);
 int 	check_down(t_game *game);
+int 	check_is_exit(t_game *game);
 
 
 // MAPA
@@ -103,6 +107,10 @@ void    print_map(t_game *game);
 
 // IMAGENES
 void    upload_img(t_game *game);
+void    print_left(t_game *game);
+void    print_right(t_game *game);
+void    print_up(t_game *game);
+void    print_down(t_game *game);
 
 
 // CHECKER
