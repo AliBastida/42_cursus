@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 19:45:12 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/04 15:52:11 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/05 15:36:55 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,9 @@ typedef struct s_game
 	int     num_collectives;
 	int		is_path;
 	int		is_exit;
-	int height;
-	int width;
+	int		n_moves;	
+	int 	height;
+	int 	width;
 }	t_game;
 
 // UTILS
@@ -77,6 +78,13 @@ char	*get_next_line(int fd);
 char	*extract_line(char *storage);
 char	*save_storage(char *storage);
 void	struct_init(t_game *game);
+int		ft_format(va_list arg, const char type);
+int		ft_printf(const char *str, ...);
+int		ft_putchar(int c);
+int		ft_putstr(char *str);
+size_t	ft_len(long n);
+char	*ft_itoa(int n);
+int		ft_putnbr(int n);
 
 //FREEDOM
 void    exit_error_map_raw(t_game *game);

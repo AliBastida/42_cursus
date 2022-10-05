@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:52:51 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/04 18:28:08 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/05 15:41:54 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,32 +21,47 @@ int ft_movements(int keycode, t_game *game)
     if (game->new_position ==  W)
     {
         if(check_up(game))
+        {
+            game->n_moves++;
             print_up(game);
+        }
     }
 
         //printf("ME MUEVO PARA ARRIBA\n");// en lugar del printf, llamo a la función check move y print move
     if (game->new_position ==  S)
     {
         if(check_down(game)) //printf("ME MUEVO PARA ABAJO\n");*/
-            print_down(game);
+            {
+                game->n_moves++;
+                print_down(game);
+            }
     }
     if (game->new_position == A)
     {
         if(check_left(game))
+        {
+            game->n_moves++;
             print_left(game);
+        }
     }
     if (game->new_position == D)
     {
         if(check_right(game))
+        {
+            game->n_moves++;
             print_right(game);
+        }
     }
 
     if (game->new_position == ESC)
     {
-            printf("ADIOS\n");
-           mlx_destroy(game->mlx);
-           exit (0);
+        printf("ADIOS\n");
+        mlx_destroy(game->mlx);
+        exit (0);
     }
+    ft_printf("Number of moves:%d\n", game->n_moves);
+    printf("number of moves printf: %d\n", game->n_moves);
+    //write(1, "&game->n_moves", 11);
     check_is_exit(game);
     return (0);
 }

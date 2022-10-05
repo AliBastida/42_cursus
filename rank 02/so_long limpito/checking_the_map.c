@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:51:33 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/04 11:36:04 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/05 14:50:31 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
  * @brief en este archivo tengo todo lo relativo para chequear el mapa y ver si se puede crear la matriz o no.
  * 
  */
-
-
 
 int check_num_params_are_valid(int argc)
 {

@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:04:02 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/04 18:26:09 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/05 15:06:19 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int check_is_exit(t_game *game)
         (game->map[game->player_y-1][game->player_x] == 'E')||
         (game->map[game->player_y+1][game->player_x] == 'E')))
         {
-            
-            write (1, "\e[1;35mYOU HAVE WIN \e[0m\n", 25);
-            return (0);
+		    write (1, "\e[1;35mYOU HAVE WIN \e[0m\n", 25);
+            exit(0);
+            //return (0);
         }
     return (1);
 }
@@ -101,14 +101,13 @@ int check_down (t_game *game)
         printf("En esa posicion tenemos: %c\n", game->map[game->player_y + 1][game->player_x]);
         if ((game->map[game->player_y+1][game->player_x] != '1') && (game->map[game->player_y+1][game->player_x] != 'E'))//Si me puedo mover porque lo que hay es un 0
         {
-            if(game->map[game->player_y+1][game->player_x+1] == 'C')
+            if(game->map[game->player_y+1][game->player_x] == 'C')
                 game->num_collectives--;
                 printf("Entro segundo if\n");
             game->player_y++;  //Ahora me muevo y actualizo la posicion y del jugador
             game->map[game->player_y][game->player_x] = 'P'; //Actualizo la informacion del mapa
             game->map[game->player_y - 1][game->player_x] = '0'; //Actualizo la informacion del mapa
             return (1);
-
         }
     }
     return (0);

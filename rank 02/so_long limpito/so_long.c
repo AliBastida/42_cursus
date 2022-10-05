@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:48:19 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/04 18:04:35 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/05 15:05:18 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void	struct_init(t_game *game)
 	game->there_is_c = 0;
 	game->is_path = 0;
 	game->is_exit = 0;
+	game->n_moves = 0;
+	game->num_collectives = game->there_is_c;
 }
 
 int main(int argc, char **argv)

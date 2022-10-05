@@ -6,7 +6,7 @@
 #    By: abastida <abastida@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/10 19:32:04 by abastida          #+#    #+#              #
-#    Updated: 2022/10/04 14:46:34 by abastida         ###   ########.fr        #
+#    Updated: 2022/10/05 15:38:19 by abastida         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,13 +15,13 @@ CC = gcc
 RM = rm -fr
 CFLAGS = -Wall -Werror -Wextra -MMD -fsanitize=address -g3
 
-SRC = so_long.c map_utils.c matrix_utils.c movements.c finding_path.c images.c checking_the_map.c about_characters.c get_next_line .c get_next_line_utils.c exit.c print_map.c check_move.c print_move.c
+SRC = src.c so_long.c map_utils.c matrix_utils.c movements.c finding_path.c images.c checking_the_map.c about_characters.c get_next_line .c get_next_line_utils.c exit.c print_map.c check_move.c print_move.c ft_printf.c
 
 OBJ = $(addprefix .,$(addsuffix .o,$(basename $(SRC))))
 
 DEPS = $(addprefix .,$(addsuffix .d,$(basename $(SRC))))
 
-HEADER = so_long.h get_next_line.h libft.h
+HEADER = so_long.h get_next_line.h libft.h libftprintf.h
 
 LIBS =  libmlx.dylib
 
