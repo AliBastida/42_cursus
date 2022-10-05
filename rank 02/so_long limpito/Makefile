@@ -6,7 +6,7 @@
 #    By: abastida <abastida@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/10 19:32:04 by abastida          #+#    #+#              #
-#    Updated: 2022/10/05 15:38:19 by abastida         ###   ########.fr        #
+#    Updated: 2022/10/05 16:29:13 by abastida         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ OBJ = $(addprefix .,$(addsuffix .o,$(basename $(SRC))))
 
 DEPS = $(addprefix .,$(addsuffix .d,$(basename $(SRC))))
 
-HEADER = so_long.h get_next_line.h libft.h libftprintf.h
+HEADER = so_long.h get_next_line.h libftprintf.h libft.h
 
 LIBS =  libmlx.dylib
 

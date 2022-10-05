@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:52:51 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/05 15:41:54 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/05 18:48:20 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int ft_movements(int keycode, t_game *game)
         }
     }
 
-        //printf("ME MUEVO PARA ARRIBA\n");// en lugar del printf, llamo a la función check move y print move
     if (game->new_position ==  S)
     {
         if(check_down(game)) //printf("ME MUEVO PARA ABAJO\n");*/
@@ -59,7 +58,7 @@ int ft_movements(int keycode, t_game *game)
         mlx_destroy(game->mlx);
         exit (0);
     }
-    ft_printf("Number of moves:%d\n", game->n_moves);
+    ft_printf("Number of moves: %d\n", game->n_moves);
     printf("number of moves printf: %d\n", game->n_moves);
     //write(1, "&game->n_moves", 11);
     check_is_exit(game);

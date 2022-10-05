@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:48:19 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/05 15:05:18 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/05 16:21:59 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,7 @@ int main(int argc, char **argv)
         return(0);
 	game.mlx = mlx_init();
 	game.mlx_win = mlx_new_window(game.mlx, game.map_width * 50, game.map_height * 50, (char*)"so_long");
-	printf("Esto mide\n");
-	printf ("%d game->map_width\n", game.map_width);
-	printf ("%d game->map_height\n" ,game.map_height);
-	
+		
 	upload_img(&game);
 	print_map(&game);
 	mlx_hook(game.mlx_win, 2, 0, ft_movements, &game);

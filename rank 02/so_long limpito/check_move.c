@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:04:02 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/05 15:06:19 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/05 18:46:50 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int check_is_exit(t_game *game)
         {
 		    write (1, "\e[1;35mYOU HAVE WIN \e[0m\n", 25);
             exit(0);
-            //return (0);
         }
     return (1);
 }
@@ -92,18 +91,13 @@ int check_up (t_game *game)
 
 int check_down (t_game *game)
 {
-    printf("pressed down\n");
     printf("Posicion del player y: %d, x: %d\n", game->player_y , game->player_x);
     if (game->new_position == S)
     {
-        printf("Entro primer if\n");
-        printf("Quiero ir a y: %d, x: %d\n", game->player_y + 1, game->player_x);
-        printf("En esa posicion tenemos: %c\n", game->map[game->player_y + 1][game->player_x]);
         if ((game->map[game->player_y+1][game->player_x] != '1') && (game->map[game->player_y+1][game->player_x] != 'E'))//Si me puedo mover porque lo que hay es un 0
         {
             if(game->map[game->player_y+1][game->player_x] == 'C')
                 game->num_collectives--;
-                printf("Entro segundo if\n");
             game->player_y++;  //Ahora me muevo y actualizo la posicion y del jugador
             game->map[game->player_y][game->player_x] = 'P'; //Actualizo la informacion del mapa
             game->map[game->player_y - 1][game->player_x] = '0'; //Actualizo la informacion del mapa
