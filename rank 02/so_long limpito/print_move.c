@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 12:31:30 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/04 17:59:05 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/11 11:11:57 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,3 @@ void    print_down(t_game *game)
       //Dibuja el personaje en su posicion actual
      mlx_put_image_to_window(game->mlx, game->mlx_win, game->img[7].img_ptr, 50 * (game->player_x), 50 * (game->player_y));
 }
-

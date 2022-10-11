@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:52:51 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/05 18:48:20 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/11 13:34:55 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,7 @@ int ft_movements(int keycode, t_game *game)
         exit (0);
     }
     ft_printf("Number of moves: %d\n", game->n_moves);
-    printf("number of moves printf: %d\n", game->n_moves);
-    //write(1, "&game->n_moves", 11);
+    mlx_string_put(game->mlx, game->mlx_win, 20, 25, 100000000, ft_itoa(game->n_moves));
     check_is_exit(game);
     return (0);
 }

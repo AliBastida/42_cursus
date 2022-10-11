@@ -28,16 +28,16 @@ size_t	ft_len(long n)
 	if (n == 0)
 		i++;
 	if (n < 0)
-		{
-			n *= -1;
-			i = 1;
-		}
-	if (n > 0)
-		{
-			n /= 10;
-			i++;
-		}
-		return (i);
+	{
+		n *= -1;
+		i = 1;
+	}
+	while (n > 0)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
 	}
 char	*ft_itoa(int n)
 {
@@ -54,22 +54,23 @@ char	*ft_itoa(int n)
 	if (a == 0)
 		num [0] = '0';
 	else if (a < 0)
-		{
-			a *= -1;
-			num [0] = '-';
-		}
-	else if (a > 0)
-		{
-			num[--contador] = (a % 10) + '0';
-			a /= 10;
-		}
-		return (num);
+	{
+		a *= -1;
+		num [0] = '-';
 	}
+	while (a > 0)
+	{
+		num[--contador] = (a % 10) + '0';
+		a /= 10;
+	}
+	return (num);
+}
 
 int ft_putnbr(int n)
 {
 	int len;
 	char *num;
+	(void)n;
 
 	len = 0;
 	num = ft_itoa(n);
