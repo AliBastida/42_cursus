@@ -11,11 +11,6 @@
 /* ************************************************************************** */
 
 #include "so_long.h"
-/**
- * @brief esta funcion carga las imgs.
- * 
- * @param game 
- */
 
 static void	upload_accesories(t_game *game, int height, int width)
 {
