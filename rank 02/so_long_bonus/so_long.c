@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:48:19 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/13 14:33:59 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/13 13:21:25 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int main(int argc, char **argv)
     if(!take_the_map(argv[1], &(game)))
         return(0);
 	game.mlx = mlx_init();
-	game.mlx_win = mlx_new_window(game.mlx, game.map_width * 50, (game.map_height * 50), (char*)"so_long");
+	game.mlx_win = mlx_new_window(game.mlx, game.map_width * 50, (game.map_height * 50) + 50, (char*)"so_long");
 		
 	upload_img(&game);
 	print_map(&game);
