@@ -1,4 +1,6 @@
 
+
+
 void print_up_or_down_line(int max_word_lenght)
 {
 	int i;
