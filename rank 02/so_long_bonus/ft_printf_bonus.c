@@ -1,6 +1,4 @@
-#include "libftprintf.h"
-#include "libft.h"
-#include <stdarg.h>
+#include "so_long_bonus.h"
 
 int	ft_format(va_list arg, const char type)
 {
@@ -42,20 +40,3 @@ int	ft_printf(const char *str, ...)
 	va_end(arg);
 	return (len);
 }
-
-/*int main(void)
-{
-	printf ("Hola %c\n", 'A');
-	ft_printf("Hola %c\n", 'A');
-
-	printf ("Hola %c\n", '%');
-	ft_printf("Hola %c\n", '%');
-	
-	printf ("hola %s\n", "caracola");
-	ft_printf("hola %s\n", "cosa bonita");
-
-	printf ("42 %d\n", 547);
-	ft_printf("42 %d", 547);
-	return (0);
-}*/
-

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   finding_path.c                                     :+:      :+:    :+:   */
+/*   finding_path_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 11:12:21 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/03 19:51:34 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/13 14:49:07 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 /**
  * @brief funcion para encontrar el camino
@@ -32,8 +32,6 @@ void ft_print_map(t_game *game)
         printf("\n");
     }
 }
-
-
 
  int find_path(t_game *game, int y, int x)
 {
@@ -58,7 +56,7 @@ void ft_print_map(t_game *game)
     printf("arriba\n");
     if (game->is_exit == 1) 
         {
-            printf("el camino seguido: %d %d\n", y, x);
+            ft_printf("el camino seguido: %d %d\n", y, x);
             return (IS_TRUE);
         }
     return (IS_FALSE);

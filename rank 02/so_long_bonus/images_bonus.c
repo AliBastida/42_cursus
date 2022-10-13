@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   images.c                                           :+:      :+:    :+:   */
+/*   images_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:28:12 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/13 13:17:42 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/13 15:28:40 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 static void	upload_accesories(t_game *game, int height, int width)
 {

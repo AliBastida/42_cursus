@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 19:45:12 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/13 13:17:33 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/13 15:24:37 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 # include <stdlib.h>
 # include <string.h>
 # include <fcntl.h>
+# include "libftprintf.h"
+# include "libft.h"
+# include <stdarg.h>
+# include "get_next_line.h"
+
 # include "./mlx/mlx.h"
 
 # define IS_TRUE 1

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   about_characters.c                                 :+:      :+:    :+:   */
+/*   about_characters_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 16:17:51 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/04 15:52:33 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/13 14:45:00 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 /**
  * @brief en este archivo tengo los chequeos de los caracteres. 
@@ -31,6 +31,7 @@ int	characters_are_valid(t_game *game)
 				&& game->map_raw[i] != 'C'
 				&& game->map_raw[i] != 'E'
 				&& game->map_raw[i] != 'P'
+				&& game->map_raw[i] != 'I' 
 				&& game->map_raw[i] != '\n')
 			{
 				write(2 ,"Error: invalid characters in map\n", 34);

@@ -6,11 +6,11 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:51:33 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/05 14:50:31 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/13 14:47:16 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 /**
  * @brief en este archivo tengo todo lo relativo para chequear el mapa y ver si se puede crear la matriz o no.

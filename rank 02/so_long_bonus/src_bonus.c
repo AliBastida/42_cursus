@@ -1,5 +1,4 @@
-#include "libftprintf.h"
-#include "libft.h"
+# include "so_long_bonus.h"
 
 int	ft_putchar(int c)
 {
