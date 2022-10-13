@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 19:45:12 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/05 15:36:55 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/13 13:17:33 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@
 # define RIGHT_S	"img/xpm/skeletonright.xpm"
 # define LEFT_S		"img/xpm/skelleft.xpm"
 # define COLL		"img/xpm/collectible.xpm"
+# define BLACK_SQUARE "img/xpm/blacksquare.xpm"
 
 typedef struct s_img
 {

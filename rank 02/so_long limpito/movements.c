@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:52:51 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/11 13:34:55 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/13 13:38:35 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 int ft_movements(int keycode, t_game *game)
 {
     game->new_position = keycode;
-    
-    printf("There num_collectives vale = %d\n", game->num_collectives);
-    
+
     if (game->new_position ==  W)
     {
         if(check_up(game))
@@ -59,7 +57,9 @@ int ft_movements(int keycode, t_game *game)
         exit (0);
     }
     ft_printf("Number of moves: %d\n", game->n_moves);
-    mlx_string_put(game->mlx, game->mlx_win, 20, 25, 100000000, ft_itoa(game->n_moves));
+    mlx_put_image_to_window(game->mlx, game->mlx_win, game->img[12].img_ptr, (game->map_width * 50) - 150, (game->map_height * 50));
+    mlx_string_put(game->mlx, game->mlx_win, (game->map_width * 50) - 150, (game->map_height * 50) + 25, 66000000, ft_itoa(game->n_moves));
+    //mlx_string_put(game->mlx, game->mlx_win, 0, 0, 0xFFFFFFFF, ft_itoa(game->n_moves));
     check_is_exit(game);
     return (0);
 }

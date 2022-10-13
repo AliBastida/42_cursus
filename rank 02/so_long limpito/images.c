@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:28:12 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/04 13:26:18 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/13 13:17:42 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,9 @@ static void	upload_skeleton(t_game *game, int height, int width)
 
 	game->img[11].img_ptr = mlx_xpm_file_to_image(game->mlx, LEFT_S, &height, &width);
 	mlx_put_image_to_window(game->mlx, game->mlx_win, game->img[11].img_ptr, height, width);
+
+	game->img[12].img_ptr = mlx_xpm_file_to_image(game->mlx, BLACK_SQUARE, &height, &width);
+	mlx_put_image_to_window(game->mlx, game->mlx_win, game->img[12].img_ptr, height, width);
 
 }
 	
