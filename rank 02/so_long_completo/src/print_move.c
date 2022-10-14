@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 12:31:30 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/14 17:01:18 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/14 17:15:21 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	print_left(t_game *game)
 {
-	// mlx_put_image_to_window(game->mlx, game->mlx_win, game->img[12].img_ptr,
-	// 	(game->map_width * 50) - 150, (game->map_height * 50) + 25);
 	mlx_put_image_to_window(game->mlx, game->mlx_win, game->img[0].img_ptr,
 		50 * (game->player_x + 1), 50 * (game->player_y));
 	mlx_put_image_to_window(game->mlx, game->mlx_win, game->img[5].img_ptr,
@@ -32,8 +30,6 @@ void	print_right(t_game *game)
 
 void	print_up(t_game *game)
 {
-	// mlx_put_image_to_window(game->mlx, game->mlx_win, game->img[12].img_ptr,
-	// 	(game->map_width * 50) - 150, (game->map_height * 50) + 25);
 	mlx_put_image_to_window(game->mlx, game->mlx_win, game->img[0].img_ptr,
 		50 * (game->player_x), 50 * (game->player_y + 1));
 	mlx_put_image_to_window(game->mlx, game->mlx_win, game->img[4].img_ptr,
@@ -42,9 +38,6 @@ void	print_up(t_game *game)
 
 void	print_down(t_game *game)
 {
-	(void)game;
-	// mlx_put_image_to_window(game->mlx, game->mlx_win, game->img[12].img_ptr,
-	// 	(game->map_width * 50) - 150, (game->map_height * 50) + 25);
 	mlx_put_image_to_window(game->mlx, game->mlx_win, game->img[0].img_ptr,
 		50 * (game->player_x), 50 * (game->player_y - 1));
 	mlx_put_image_to_window(game->mlx, game->mlx_win, game->img[7].img_ptr,
