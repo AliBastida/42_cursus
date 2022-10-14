@@ -6,7 +6,7 @@
 #    By: abastida <abastida@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/10 19:32:04 by abastida          #+#    #+#              #
-#    Updated: 2022/10/14 11:49:20 by abastida         ###   ########.fr        #
+#    Updated: 2022/10/14 13:00:02 by abastida         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,41 +15,56 @@ CC = gcc
 RM = rm -fr
 CFLAGS = -Wall -Werror -Wextra -MMD -fsanitize=address -g3
 
-SRC = ./src/so_long.c \ 
-	./src/map_utils.c \ 
-	./src/matrix_utils.c \
-	./src/movements.c \
-	./src/finding_path.c \
-	./src/images.c \
-	./src/checking_the_map.c \
-	./src/about_characters.c \
-	./src/exit.c \
-	./src/print_map.c \
-	./src/check_move.c \
-	./src/print_move.c
-	./gnl/get_next_line.c \
-	./gnl/get_next_line_utils.c \
-	./printf/ft_printf.c\
-	./printf/src.c\
+SRC = /src/so_long.c \
+	/src/map_utils.c \
+	/src/matrix_utils.c \
+	/src/movements.c \
+	/src/finding_path.c \
+	/src/images.c \
+	/src/checking_the_map.c \
+	/src/about_characters.c \
+	/src/exit.c \
+	/src/print_map.c \
+	/src/check_move.c \
+	/src/print_move.c \
+	/gnl/get_next_line.c \
+	/gnl/get_next_line_utils.c \
+	/printf/ft_printf.c\
+	/printf/src.c 
 
-#SRC_BONUS = src_bonus.c so_long_bonus.c map_utils_bonus.c matrix_utils_bonus.c movements_bonus.c \
-	finding_path_bonus.c images_bonus.c checking_the_map_bonus.c get_next_line_bonus.c get_next_line_utils_bonus.c \
-	print_move_bonus.c print_map_bonus.c check_move_bonus.c print_move_bonus.c ft_printf_bonus.c
+SRC_BONUS = /src_bonus/so_long_bonus.c \
+	/src_bonus/map_utils_bonus.c \
+	/src_bonus/matrix_utils_bonus.c \
+	/src_bonus/movements_bonus.c \
+	/src_bonus/finding_path_bonus.c \
+	/src_bonus/images_bonus.c \
+	/src_bonus/checking_the_map_bonus.c \
+	/src_bonus/about_characters_bonus.c \
+	/src_bonus/exit_bonus.c \
+	/src_bonus/print_map_bonus.c \
+	/src_bonus/check_move_bonus.c \
+	/src_bonus/print_move_bonus.c \
+	/gnl/get_next_line.c \
+	/gnl/get_next_line_utils.c \
+	/printf/ft_printf.c\
+	/printf/src.c 
 
 OBJ = $(addprefix .,$(addsuffix .o,$(basename $(SRC))))
 
-#OBJ_BONUS = $(addprefix .,$(addsuffix .o,$(basename $(SRC_BONUS))))
+OBJ_BONUS = $(addprefix .,$(addsuffix .o,$(basename $(SRC_BONUS))))
 
 DEPS = $(addprefix .,$(addsuffix .d,$(basename $(SRC))))
 
-#DEPS_BONUS = $(addprefix .,$(addsuffix .d,$(basename $(SRC_BONUS))))
+DEPS_BONUS = $(addprefix .,$(addsuffix .d,$(basename $(SRC_BONUS))))
 
-HEADER = ./inc/so_long.h\
-	./inc/get_next_line.h\
-	./inc/libftprintf.h\
-	./inc/libft.h\
+HEADER = ./inc/so_long.h \
+	./inc/get_next_line.h \
+	./inc/libftprintf.h \
 
-#HEADER_BONUS = so_long_bonus.h get_next_line.h libftprintf.h libft.h
+
+HEADER_BONUS = ./inc_bonus/so_long_bonus.h \
+	./inc/get_next_line.h \
+	./inc/libftprintf.h \
 
 LIBS =  libmlx.dylib
 
@@ -69,17 +84,19 @@ all: make_libs $(NAME)
 
 make_libs : 
 	#esta es para llamar a los Makefiles de otros programas.
-	$(MAKE) -C mlx
+	$(MAKE) -C mlx 
+	cp mlx/libmlx.a .
 
 -include $(DEPS)
 $(NAME): $(OBJ) $(HEADER) #aqui añadiria los .a como dependencias para que si cambia vuelva a recmopilar 
 	$(CC) $(CFLAGS) $(LIBPATH) $(LDLIBS) $(FRAMES) $(OBJ) -o $(NAME)
-	#cp mlx/libmlx.a .
 	
+
 -include $(DEPS_BONUS)	
-bonus: $(OBJ_BONUS)
-	$(CC) $(CFLAGS) $(LIBPATH) $(LDLIBS) $(FRAMES) $(OBJ) -o $(NAME)
-	touch @
+bonus: $(OBJ_BONUS) $(HEADER_BONUS) make_libs
+
+	$(CC) $(CFLAGS) $(LIBPATH) $(LDLIBS) $(FRAMES) $(OBJ_BONUS) -o $(NAME)
+	
 
 clean: 
 	$(RM) $(OBJ)

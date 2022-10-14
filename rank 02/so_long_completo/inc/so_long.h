@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_bonus.h                                    :+:      :+:    :+:   */
+/*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 19:45:12 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/14 10:57:05 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/14 11:57:40 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <fcntl.h>
-# include <stdarg.h>
-# include "get_next_line.h"
-# include "./mlx/mlx.h"
+# include "../mlx/mlx.h"
 
 # define IS_TRUE 1
 # define IS_FALSE 0
@@ -75,8 +73,8 @@ typedef struct s_game
 }	t_game;
 
 // UTILS
-size_t	ft_strlen(const char *str);
-char	*ft_strjoin(char *s1, char *s2);
+int		ft_strlen(char *str);
+char	*ft_strjoin(const char *s1, const char *s2);
 char	*get_next_line(int fd);
 char	*extract_line(char *storage);
 char	*save_storage(char *storage);
