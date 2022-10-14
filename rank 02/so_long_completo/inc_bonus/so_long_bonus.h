@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 19:45:12 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/14 13:07:37 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/14 15:59:17 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,9 @@
 # define BACK_P		"img/xpm/backprincess.xpm"
 # define LEFT_P		"img/xpm/leftprincess.xpm"
 # define RIGHT_P	"img/xpm/rightprincess.xpm"
-# define FRONT_S 	"img/xpm/skellfront.xpm"
-# define BACK_S		"img/xpm/skellback.xpm"
-# define RIGHT_S	"img/xpm/skeletonright.xpm"
-# define LEFT_S		"img/xpm/skelleft.xpm"
 # define COLL		"img/xpm/collectible.xpm"
 # define BLACK_SQUARE "img/xpm/blacksquare.xpm"
+
 
 typedef struct s_img
 {
@@ -121,6 +118,7 @@ void    print_left(t_game *game);
 void    print_right(t_game *game);
 void    print_up(t_game *game);
 void    print_down(t_game *game);
+
 
 
 // CHECKER
