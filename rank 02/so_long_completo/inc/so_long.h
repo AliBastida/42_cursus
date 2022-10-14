@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 19:45:12 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/14 11:57:40 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/14 16:45:22 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,6 @@
 # define BACK_P		"img/xpm/backprincess.xpm"
 # define LEFT_P		"img/xpm/leftprincess.xpm"
 # define RIGHT_P	"img/xpm/rightprincess.xpm"
-# define FRONT_S 	"img/xpm/skellfront.xpm"
-# define BACK_S		"img/xpm/skellback.xpm"
-# define RIGHT_S	"img/xpm/skeletonright.xpm"
-# define LEFT_S		"img/xpm/skelleft.xpm"
 # define COLL		"img/xpm/collectible.xpm"
 # define BLACK_SQUARE "img/xpm/blacksquare.xpm"
 

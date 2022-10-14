@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:48:19 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/14 16:00:21 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/14 16:53:17 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,7 @@ void	struct_init(t_game *game)
 	game->num_collectives = game->there_is_c;
 	game->count_frames = 0;
 }
-int	funcion_esqueleto(t_game *game)
-{
-	game->count_frames++;
-	if (game->count_frames > 1000)
-	{
-		ft_printf ("contador es mayor a 1000\n");
-		game->count_frames = 0;
-	}
-	return (0);
-}
+
 int main(int argc, char **argv)
 {
     t_game game;

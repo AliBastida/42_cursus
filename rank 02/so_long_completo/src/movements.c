@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:52:51 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/14 11:58:52 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/14 16:43:54 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int ft_movements(int keycode, t_game *game)
 
     if (game->new_position == ESC)
     {
-        printf("ADIOS\n");
         mlx_destroy(game->mlx);
         exit (0);
     }

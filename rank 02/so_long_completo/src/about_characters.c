@@ -12,11 +12,6 @@
 
 #include "../inc/so_long.h"
 
-/**
- * @brief en este archivo tengo los chequeos de los caracteres. 
- * 
- */
-
 int	characters_are_valid(t_game *game)
 {
 	int i;
@@ -24,7 +19,7 @@ int	characters_are_valid(t_game *game)
 	i = 0;
 	if (game->map_raw)
 	{
-		while (game->map_raw[i] != '\0')
+		while	(game->map_raw[i] != '\0')
 		{
 			if (game->map_raw[i] != '0' 
 				&& game->map_raw[i] != '1'
