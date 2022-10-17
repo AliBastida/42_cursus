@@ -66,7 +66,6 @@ char	*ft_strjoin(char *s1, char *s2)
 
 	if (!s1)
 	{
-		printf("S1 Todavia no existe en este momento\n");
 		s1 = (char *)malloc(sizeof(char) * 1);
 		if (!s1)
 			return (NULL);

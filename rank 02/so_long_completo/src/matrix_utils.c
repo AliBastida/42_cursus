@@ -11,22 +11,18 @@
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
-/**
- * @brief en este archivo tengo todo lo relativo a la matriz
- * 
- */
 
 int	create_matrix(t_game *game)
 {
 	int	i;
 
 	i = 0;
-	game->map = (char **)malloc(sizeof(char *) * (game->map_height + 1)); //creamos el eje de las h, son punteros que apuntaeran a las columnas, todavia no tiene valor-direccion asignado
+	game->map = (char **)malloc(sizeof(char *) * (game->map_height + 1));
 	if (!game->map)
 		return (0);
 	while (i < game->map_height)
 	{
-		game->map[i] = (char *)malloc(sizeof(char) * (game->map_width + 1)); //creo la columna, y pongo la direccion que me devuelve el malloc en el slot del eje X que corresponde
+		game->map[i] = (char *)malloc(sizeof(char) * (game->map_width + 1));
 		if (!game->map[i])
 			return (0);
 		game->map[i][game->map_width] = '\0';
@@ -37,9 +33,7 @@ int	create_matrix(t_game *game)
 }
 
 int fill_the_matrix(t_game *game)
-{ 
-//RELLENAR LA MATRIZ
-//1. Cojo el map raw y voy poniendo los valores en la matriz
+{
 	int cont_x;
 	int cont_y;
 	int i;
@@ -74,22 +68,17 @@ void    init_player_position(t_game *game)
 
     while (game->map[y] != NULL)
     {
-        printf ("entro en el while \n");
         while ((game->map[y][x] != '\0'))
-        {  
-            if (game->map[y][x] == 'P')
+        {
+			if (game->map[y][x] == 'P')
             {
                 game->player_x = x;
                 game->player_y = y;
                 break;
             }
             x++;
-            printf ("la x antes de resetear es = %d\n", x);
         }
         x = 0;
-        printf ("la x es = %d\n", x);
         y++;
-        printf ("la y es = %d\n", y);
-    } 
-    printf ("El P esta en: %d, %d\n", game->player_y, game->player_x);
+	}
 }

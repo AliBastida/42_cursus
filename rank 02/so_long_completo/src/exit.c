@@ -12,25 +12,23 @@
 
 #include "../inc/so_long.h"
 
-void    exit_error_map_raw(t_game *game)
+void	exit_error_map_raw(t_game *game)
 {
-    free (game->map_raw);
-    exit (1);
+	free (game->map_raw);
+	exit (1);
 }
 
-int    exit_error_matrix(t_game *game)
+int	exit_error_matrix(t_game *game)
 {
-    free(game->map_raw);
-    
-    int y;
+	int	y;
 
-    y = 0;
-    while (game->map[y])
-    {
-        free(game->map[y]);
-        y++;
-    }
-    free (game->map);
-    return (0);
+	free(game->map_raw);
+	y = 0;
+	while (game->map[y])
+	{
+		free(game->map[y]);
+		y++;
+	}
+	free (game->map);
+	return (0);
 }
-

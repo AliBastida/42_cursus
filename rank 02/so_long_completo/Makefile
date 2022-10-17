@@ -27,6 +27,7 @@ SRC = /src/so_long.c \
 	/src/print_map.c \
 	/src/check_move.c \
 	/src/print_move.c \
+	/src/checking_map_raw.c \
 	/gnl/get_next_line.c \
 	/gnl/get_next_line_utils.c \
 	/printf/ft_printf.c\

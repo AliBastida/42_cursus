@@ -63,9 +63,11 @@ typedef struct s_game
 	int     num_collectives;
 	int		is_path;
 	int		is_exit;
-	int		n_moves;	
+	int		n_moves;
 	int 	height;
 	int 	width;
+	int		there_is_p;
+	int		there_is_e;
 }	t_game;
 
 // UTILS
@@ -128,5 +130,6 @@ int		find_path(t_game *game, int y, int x);
 int		characters_needed(t_game *game);
 int		characters_are_valid(t_game *game);
 int		check_the_map_raw_is_valid(t_game *game);
+void	checking_characters(t_game *game);
 
 #endif

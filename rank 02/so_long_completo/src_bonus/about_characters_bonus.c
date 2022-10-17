@@ -12,11 +12,6 @@
 
 #include "../inc_bonus/so_long_bonus.h"
 
-/**
- * @brief en este archivo tengo los chequeos de los caracteres. 
- * 
- */
-
 int	characters_are_valid(t_game *game)
 {
 	int i;
@@ -31,7 +26,6 @@ int	characters_are_valid(t_game *game)
 				&& game->map_raw[i] != 'C'
 				&& game->map_raw[i] != 'E'
 				&& game->map_raw[i] != 'P'
-				&& game->map_raw[i] != 'I' 
 				&& game->map_raw[i] != '\n')
 			{
 				write(2 ,"Error: invalid characters in map\n", 34);
