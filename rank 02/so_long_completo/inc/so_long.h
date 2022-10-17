@@ -99,6 +99,8 @@ int 	check_right(t_game *game);
 int 	check_up(t_game *game);
 int 	check_down(t_game *game);
 int 	check_is_exit(t_game *game);
+int		move_if_escape(int keycode, t_game *game);
+int		ft_movements_continue(int keycode, t_game *game);
 
 
 // MAPA
@@ -108,8 +110,7 @@ int		take_the_map(char *filename, t_game *game);
 int		the_map_is_rectangular(t_game *game);
 int 	fill_the_matrix(t_game *game);
 int		parse_the_map(int fd, t_game *game);
-void 	ft_print_map(t_game *game);
-void    print_map(t_game *game);
+void 	print_map(t_game *game);
 
 
 // IMAGENES

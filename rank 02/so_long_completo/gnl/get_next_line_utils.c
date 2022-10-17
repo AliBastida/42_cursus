@@ -25,8 +25,7 @@ size_t	ft_strlen(const char *s)
 char	*ft_strchr(const char *s, int c)
 {
 	if (!s)
-		return(0);
-	
+		return (0);
 	while (*s != '\0')
 	{
 		if (*s == (char)c)
@@ -44,7 +43,7 @@ void	ft_strjoin_fill_new_string(char *new, char *s1, char *s2)
 {
 	int	i;
 	int	j;
-	
+
 	i = 0;
 	while ((s1[i] != '\0') && (i >= 0))
 	{

@@ -1,27 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   src.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/17 19:06:30 by abastida          #+#    #+#             */
+/*   Updated: 2022/10/17 19:06:42 by abastida         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/libftprintf.h"
 
 int	ft_putchar(int c)
 {
-	write(1, &c, 1);
-	return(1);
+	write (1, &c, 1);
+	return (1);
 }
 
 int	ft_putstr(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
 	{
 		write (1, &str[i], 1);
 		i++;
-		}
+	}
 	return (1);
 }
 
 size_t	ft_len(long n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (n == 0)
@@ -37,12 +49,13 @@ size_t	ft_len(long n)
 		i++;
 	}
 	return (i);
-	}
+}
+
 char	*ft_itoa(int n)
 {
-	char *num;
-	int contador;
-	long a;
+	char	*num;
+	int		contador;
+	long	a;
 
 	a = (long)n;
 	contador = ft_len(a);
@@ -65,11 +78,11 @@ char	*ft_itoa(int n)
 	return (num);
 }
 
-int ft_putnbr(int n)
+int	ft_putnbr(int n)
 {
-	int len;
-	char *num;
-	(void)n;
+	int		len;
+	char	*num;
+	int		n;
 
 	len = 0;
 	num = ft_itoa(n);

@@ -84,7 +84,7 @@ char	*save_storage(char *storage)
 		free(storage);
 		return (NULL);
 	}
-	storage_saved = (char *)malloc (sizeof(char) * (ft_strlen(storage) - i + 1));
+	storage_saved = (char *)malloc(sizeof(char) * (ft_strlen(storage) - i + 1));
 	if (!storage_saved)
 		return (NULL);
 	i++;

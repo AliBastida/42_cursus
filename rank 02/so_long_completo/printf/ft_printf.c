@@ -1,10 +1,21 @@
-#include "../inc/libftprintf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/17 19:00:49 by abastida          #+#    #+#             */
+/*   Updated: 2022/10/17 19:01:01 by abastida         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "../inc/libftprintf.h"
 #include <stdarg.h>
 
 int	ft_format(va_list arg, const char type)
 {
-	int len; 
+	int	len;
 
 	len = 0;
 	if ((type == 'c') || (type == '%'))
@@ -18,21 +29,20 @@ int	ft_format(va_list arg, const char type)
 
 int	ft_printf(const char *str, ...)
 {
-	va_list arg;
+	va_list	arg;
+	int		i;
+	int		len;
 
-	int	i;
-	int	len;
-	
 	va_start (arg, str);
 	i = 0;
 	len = 0;
-	 while (str[i])
+	while (str[i])
 	{
 		if (str[i] == '%')
-			{
-				len += ft_format(arg, str[i + 1]);
-				i+=2;
-			}
+		{
+			len += ft_format(arg, str[i + 1]);
+			i += 2;
+		}
 		else
 		{
 			len += ft_putchar(str[i]);
@@ -42,20 +52,3 @@ int	ft_printf(const char *str, ...)
 	va_end(arg);
 	return (len);
 }
-
-/*int main(void)
-{
-	printf ("Hola %c\n", 'A');
-	ft_printf("Hola %c\n", 'A');
-
-	printf ("Hola %c\n", '%');
-	ft_printf("Hola %c\n", '%');
-	
-	printf ("hola %s\n", "caracola");
-	ft_printf("hola %s\n", "cosa bonita");
-
-	printf ("42 %d\n", 547);
-	ft_printf("42 %d", 547);
-	return (0);
-}*/
-

@@ -29,22 +29,22 @@ int	create_matrix(t_game *game)
 		i++;
 	}
 	game->map[i] = NULL;
-	return(1);
+	return (1);
 }
 
-int fill_the_matrix(t_game *game)
+int	fill_the_matrix(t_game *game)
 {
-	int cont_x;
-	int cont_y;
-	int i;
+	int	cont_x;
+	int	cont_y;
+	int	i;
 
 	cont_x = 0;
 	cont_y = 0;
 	i = 0;
-	while(cont_y < game->map_height)
+	while (cont_y < game->map_height)
 	{
 		cont_x = 0;
-		while(cont_x < game->map_width)
+		while (cont_x < game->map_width)
 		{
 			game->map[cont_y][cont_x] = game->map_raw[i];
 			cont_x++;
@@ -52,33 +52,32 @@ int fill_the_matrix(t_game *game)
 		}
 		i++;
 		cont_y++;
-		if(game->map_raw[i] == '\0')
-			return(1);
+		if (game->map_raw[i] == '\0')
+			return (1);
 	}
-	return(0);
+	return (0);
 }
 
-void    init_player_position(t_game *game)
+void	init_player_position(t_game *game)
 {
-    int x;
-    int y;
+	int	x;
+	int	y;
 
-    x = 0;
-    y = 0;
-
-    while (game->map[y] != NULL)
-    {
-        while ((game->map[y][x] != '\0'))
-        {
+	x = 0;
+	y = 0;
+	while (game->map[y] != NULL)
+	{
+		while ((game->map[y][x] != '\0'))
+		{
 			if (game->map[y][x] == 'P')
-            {
-                game->player_x = x;
-                game->player_y = y;
-                break;
-            }
-            x++;
-        }
-        x = 0;
-        y++;
+			{
+				game->player_x = x;
+				game->player_y = y;
+				break ;
+			}
+			x++;
+		}
+		x = 0;
+		y++;
 	}
 }
