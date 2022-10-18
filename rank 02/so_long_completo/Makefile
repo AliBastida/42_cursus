@@ -6,7 +6,7 @@
 #    By: abastida <abastida@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/10 19:32:04 by abastida          #+#    #+#              #
-#    Updated: 2022/10/14 15:42:47 by abastida         ###   ########.fr        #
+#    Updated: 2022/10/18 19:21:37 by abastida         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,7 +78,7 @@ FRAMES = -framework OpenGL -framework AppKit
 
 INCLUDES = -I mlx 
 
-.%.o: %.c 
+.%.o: %.c
 	$(CC) $(CFLAGS)  $(INCLUDES) -c  $< -o $@ 
 	#$< imprime lo de la derecha y $@ imprime lo de la izquierda
 
@@ -103,8 +103,8 @@ bonus: $(OBJ_BONUS) $(HEADER_BONUS) make_libs
 clean: 
 	$(RM) $(OBJ)
 	$(RM) $(DEPS)
-	#$(RM) $(OBJ_BONUS)
-	#$(RM) $(DEPS_BONUS)
+	$(RM) $(OBJ_BONUS)
+	$(RM) $(DEPS_BONUS)
 	$(MAKE) clean -C mlx
 	
 
