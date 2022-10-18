@@ -82,7 +82,6 @@ int	ft_putnbr(int n)
 {
 	int		len;
 	char	*num;
-	int		n;
 
 	len = 0;
 	num = ft_itoa(n);

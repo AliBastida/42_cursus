@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/18 11:24:02 by abastida          #+#    #+#             */
+/*   Updated: 2022/10/18 11:24:11 by abastida         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFTPRINTF_H
-#define LIBFTPRINTF_H
-#include <unistd.h>
-#include <stdio.h>
-#include <stdarg.h>
-#include <stdlib.h>
+# define LIBFTPRINTF_H
+# include <unistd.h>
+# include <stdio.h>
+# include <stdarg.h>
+# include <stdlib.h>
 
 int		ft_format(va_list arg, const char type);
 int		ft_printf(const char *str, ...);

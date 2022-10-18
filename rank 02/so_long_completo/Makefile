@@ -45,6 +45,7 @@ SRC_BONUS = /src_bonus/so_long_bonus.c \
 	/src_bonus/print_map_bonus.c \
 	/src_bonus/check_move_bonus.c \
 	/src_bonus/print_move_bonus.c \
+	/src_bonus/checking_map_raw_bonus.c \
 	/gnl/get_next_line.c \
 	/gnl/get_next_line_utils.c \
 	/printf/ft_printf.c\
