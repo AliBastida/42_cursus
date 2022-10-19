@@ -6,11 +6,11 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:04:02 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/14 11:58:16 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:16:45 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
+#include "so_long.h"
 
 int	check_is_exit(t_game *game)
 {

@@ -6,11 +6,11 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:51:33 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/14 11:58:22 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/19 15:13:43 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
+#include "so_long.h"
 
 int	check_num_params_are_valid(int argc)
 {
@@ -57,11 +57,14 @@ int	checking_the_map(int fd, t_game *game)
 	if (!check_the_map_raw_is_valid(game))
 		return (0);
 	if (!create_matrix(game))
-		return (exit_error_matrix(game));
+	{printf("1");
+		return (exit_error_matrix(game));}
 	if (!fill_the_matrix(game))
-		return (exit_error_matrix(game));
+	{ printf( "2");
+		return (exit_error_matrix(game));}
 	if (!map_is_surrounded_by_one(game))
-		return (exit_error_matrix(game));
+	{printf( "3");
+		return (exit_error_matrix(game));}
 	init_player_position(game);
 	if (!find_path(game, game->player_y, game->player_x))
 	{
@@ -69,7 +72,8 @@ int	checking_the_map(int fd, t_game *game)
 		return (exit_error_matrix(game));
 	}
 	if (!fill_the_matrix(game))
-		return (exit_error_matrix(game));
+	{printf("4");
+		return (exit_error_matrix(game));}
 	return (1);
 }
 

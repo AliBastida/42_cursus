@@ -6,14 +6,15 @@
 #    By: abastida <abastida@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/10 19:32:04 by abastida          #+#    #+#              #
-#    Updated: 2022/10/18 19:21:37 by abastida         ###   ########.fr        #
+#    Updated: 2022/10/19 18:17:18 by abastida         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
+NAME_BONUS = .bonus
 CC = gcc
 RM = rm -fr
-CFLAGS = -Wall -Werror -Wextra -MMD -fsanitize=address -g3
+CFLAGS = -Wall -Werror -Wextra -MMD
 
 SRC = /src/so_long.c \
 	/src/map_utils.c \
@@ -28,10 +29,9 @@ SRC = /src/so_long.c \
 	/src/check_move.c \
 	/src/print_move.c \
 	/src/checking_map_raw.c \
-	/gnl/get_next_line.c \
-	/gnl/get_next_line_utils.c \
-	/printf/ft_printf.c\
-	/printf/src.c 
+	/src/get_next_line.c \
+	/src/get_next_line_utils.c \
+
 
 SRC_BONUS = /src_bonus/so_long_bonus.c \
 	/src_bonus/map_utils_bonus.c \
@@ -46,58 +46,66 @@ SRC_BONUS = /src_bonus/so_long_bonus.c \
 	/src_bonus/check_move_bonus.c \
 	/src_bonus/print_move_bonus.c \
 	/src_bonus/checking_map_raw_bonus.c \
-	/gnl/get_next_line.c \
-	/gnl/get_next_line_utils.c \
-	/printf/ft_printf.c\
-	/printf/src.c 
+	/src_bonus/get_next_line.c \
+	/src_bonus/get_next_line_utils.c \
+	
 
-OBJ = $(addprefix .,$(addsuffix .o,$(basename $(SRC))))
+OBJ = $(addprefix .,$(addsuffix .o,$(notdir $(basename $(SRC)))))
 
-OBJ_BONUS = $(addprefix .,$(addsuffix .o,$(basename $(SRC_BONUS))))
+OBJ_BONUS = $(addprefix .,$(addsuffix .o,$(notdir $(basename $(SRC_BONUS)))))
 
-DEPS = $(addprefix .,$(addsuffix .d,$(basename $(SRC))))
+DEPS = $(addprefix .,$(addsuffix .d,$(notdir $(basename $(SRC)))))
 
-DEPS_BONUS = $(addprefix .,$(addsuffix .d,$(basename $(SRC_BONUS))))
+DEPS_BONUS = $(addprefix .,$(addsuffix .d,$(notdir$(basename $(SRC_BONUS)))))
 
-HEADER = ./inc/so_long.h \
-	./inc/get_next_line.h \
-	./inc/libftprintf.h \
+HEADER = inc/ 
 
+LIBS = mlx/libmlx.a ft_printf/libftprintf.a
+LIBS_B = mlx/libmlx.a ft_printf/libftprintf.a libft/libft.a
 
-HEADER_BONUS = ./inc_bonus/so_long_bonus.h \
-	./inc/get_next_line.h \
-	./inc/libftprintf.h \
+HEADER_BONUS = inc_bonus/
 
-LIBS =  libmlx.dylib
+LIBPATH = -L mlx -L ft_printf -L libft
 
-LIBPATH = -L mlx
-
-LDLIBS = -lmlx 
+LDLIBS = -lmlx -lftprintf 
+LDLIBS_B = -lmlx -lftprintf -lft
 
 FRAMES = -framework OpenGL -framework AppKit  
 
-INCLUDES = -I mlx 
+INCLUDES = -I mlx -I $(HEADER) 
+INCLUDES_BONUS = -I mlx -I $(HEADER_BONUS) -I libft
 
-.%.o: %.c
+.%.o: src/%.c
 	$(CC) $(CFLAGS)  $(INCLUDES) -c  $< -o $@ 
+	#$< imprime lo de la derecha y $@ imprime lo de la izquierda
+.%.o: src_bonus/%.c
+	$(CC) $(CFLAGS)  $(INCLUDES_BONUS) -c  $< -o $@ 
 	#$< imprime lo de la derecha y $@ imprime lo de la izquierda
 
 all: make_libs $(NAME) 
-
+		
 make_libs : 
 	#esta es para llamar a los Makefiles de otros programas.
 	$(MAKE) -C mlx 
-	cp mlx/libmlx.a .
+	$(MAKE) -C ft_printf
 
--include $(DEPS)
-$(NAME): $(OBJ) $(HEADER) #aqui añadiria los .a como dependencias para que si cambia vuelva a recmopilar 
-	$(CC) $(CFLAGS) $(LIBPATH) $(LDLIBS) $(FRAMES) $(OBJ) -o $(NAME)
+make_libs_B : 
+	#esta es para llamar a los Makefiles de otros programas.
+	$(MAKE) -C mlx 
+	$(MAKE) -C ft_printf
+	$(MAKE) -C libft
 	
 
--include $(DEPS_BONUS)	
-bonus: $(OBJ_BONUS) $(HEADER_BONUS) make_libs
+-include $(DEPS)
+$(NAME): $(OBJ) $(LIBS)#aqui añadiria los .a como dependencias para que si cambia vuelva a recmopilar 
+	$(CC) $(CFLAGS) $(LIBPATH) $(LDLIBS) $(FRAMES) $(OBJ) -o $(NAME)
+	
+bonus:  make_libs_B $(NAME_BONUS)
 
-	$(CC) $(CFLAGS) $(LIBPATH) $(LDLIBS) $(FRAMES) $(OBJ_BONUS) -o $(NAME)
+-include $(DEPS_BONUS)	
+$(NAME_BONUS) : $(OBJ_BONUS) $(LIBS_B)
+	$(CC) $(CFLAGS) $(LIBPATH) $(LDLIBS_B) $(FRAMES) $(OBJ_BONUS) -o $(NAME)
+	touch $@
 	
 
 clean: 
@@ -106,15 +114,21 @@ clean:
 	$(RM) $(OBJ_BONUS)
 	$(RM) $(DEPS_BONUS)
 	$(MAKE) clean -C mlx
+	$(MAKE) clean -C ft_printf
+	$(MAKE) clean -C libft
 	
 
 fclean: clean
-	$(RM) $(NAME) $(LIBS)
+	$(RM) $(NAME) 
+	$(MAKE) clean -C mlx
+	$(MAKE) fclean -C ft_printf
+	$(MAKE) fclean -C libft
+	
 
 re: fclean
 	$(MAKE)
 
-.PHONY: make_libs all clean fclean re #aun no está funcional. No me borra los .o 
+.PHONY: make_libs  make_libs_B all clean fclean re bonus #aun no está funcional. No me borra los .o 
 
 # los .o dependen de los .c y los .h
 # del ejecutable son los .o y los .a 

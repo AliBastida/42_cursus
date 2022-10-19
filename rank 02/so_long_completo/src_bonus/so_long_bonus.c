@@ -6,11 +6,11 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:48:19 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/18 12:27:18 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:42:48 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc_bonus/so_long_bonus.h"
+#include "so_long_bonus.h"
 
 void	struct_init(t_game *game)
 {

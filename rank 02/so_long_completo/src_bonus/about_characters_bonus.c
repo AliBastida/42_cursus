@@ -6,11 +6,11 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 16:17:51 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/18 11:38:07 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:53:28 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc_bonus/so_long_bonus.h"
+#include "so_long_bonus.h"
 
 static int	error_message(void)
 {

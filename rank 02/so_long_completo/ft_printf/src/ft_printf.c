@@ -3,27 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abastida <abastida@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 19:00:49 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/17 19:01:01 by abastida         ###   ########.fr       */
+/*   Created: 2022/06/27 12:57:35 by abastida          #+#    #+#             */
+/*   Updated: 2022/06/30 14:28:04 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libftprintf.h"
-#include <stdarg.h>
+#include "ft_printf.h"
 
 int	ft_format(va_list arg, const char type)
 {
 	int	len;
 
 	len = 0;
-	if ((type == 'c') || (type == '%'))
+	if (type == 'c')
 		len += ft_putchar(va_arg(arg, int));
+	else if (type == '%')
+		len += ft_putchar('%');
 	else if (type == 's')
 		len += ft_putstr(va_arg(arg, char *));
 	else if ((type == 'd') || (type == 'i'))
-		len += ft_putnbr(va_arg(arg, int));
+		len += ft_printnbr(va_arg(arg, int));
+	else if (type == 'u')
+		len += ft_printnbr(va_arg(arg, unsigned int));
+	else if (type == 'x')
+		len += ft_puthexa_low(va_arg(arg, unsigned int));
+	else if (type == 'X')
+		len += ft_puthexa_upper(va_arg(arg, unsigned int));
+	else if (type == 'p')
+		len += ft_ptrhexa(va_arg(arg, unsigned long long));
 	return (len);
 }
 

@@ -6,23 +6,23 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 14:10:23 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/14 11:59:44 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:56:04 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/get_next_line.h"
+#include "so_long_bonus.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_strlen(char *str)
 {
 	size_t	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (str[i] != '\0')
 	i++;
 	return (i);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr( char *s, int c)
 {
 	if (!s)
 		return (0);

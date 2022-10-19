@@ -6,11 +6,11 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 12:31:30 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/14 17:15:21 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:18:16 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
+#include "so_long.h"
 
 void	print_left(t_game *game)
 {

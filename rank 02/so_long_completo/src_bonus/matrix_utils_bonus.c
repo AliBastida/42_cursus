@@ -6,11 +6,11 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:47:11 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/18 12:00:30 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:57:32 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc_bonus/so_long_bonus.h"
+#include "so_long_bonus.h"
 
 int	create_matrix(t_game *game)
 {

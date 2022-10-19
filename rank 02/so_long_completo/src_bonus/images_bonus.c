@@ -6,11 +6,11 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:28:12 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/18 11:56:37 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:57:19 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc_bonus/so_long_bonus.h"
+#include "so_long_bonus.h"
 
 static void	upload_accesories(t_game *game, int height, int width)
 {

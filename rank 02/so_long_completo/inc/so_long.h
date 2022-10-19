@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 19:45:12 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/18 12:42:51 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/19 16:08:23 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 # include <stdlib.h>
 # include <string.h>
 # include <fcntl.h>
-# include "../mlx/mlx.h"
+# include "mlx.h"
+# include "get_next_line.h"
+# include "libftprintf.h"
 
 # define IS_TRUE 1
 # define IS_FALSE 0
@@ -69,7 +71,7 @@ typedef struct s_game
 
 // UTILS
 int		ft_strlen(char *str);
-char	*ft_strjoin(const char *s1, const char *s2);
+char	*ft_strjoin(char *s1, char *s2);
 char	*get_next_line(int fd);
 char	*extract_line(char *storage);
 char	*save_storage(char *storage);

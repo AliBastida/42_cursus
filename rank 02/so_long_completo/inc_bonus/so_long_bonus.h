@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 19:45:12 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/18 12:48:30 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/19 18:03:29 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 # include <stdlib.h>
 # include <string.h>
 # include <fcntl.h>
-# include "../mlx/mlx.h"
+# include "libftprintf.h"
+# include "get_next_line.h"
+# include "mlx.h"
 
 # define IS_TRUE 1
 # define IS_FALSE 0

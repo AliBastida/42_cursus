@@ -6,11 +6,11 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:52:51 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/17 18:24:03 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:18:04 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
+#include "so_long.h"
 
 int	ft_movements_continue(int keycode, t_game *game)
 {

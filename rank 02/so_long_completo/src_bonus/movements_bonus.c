@@ -6,11 +6,12 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:52:51 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/18 13:52:08 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/19 18:22:53 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc_bonus/so_long_bonus.h"
+#include "so_long_bonus.h"
+#include "libftprintf.h"
 
 int	ft_movements_continue(int keycode, t_game *game)
 {
@@ -42,7 +43,8 @@ int	move_if_escape(int keycode, t_game *game)
 		mlx_destroy(game->mlx);
 		exit (0);
 	}
-	ft_printf ("Number of moves: %d\n", game->n_moves);
+	ft_printf ("\rNumber of moves: %d", game->n_moves);
+	write(1, "\a", 1);
 	check_is_exit(game);
 	return (0);
 }

@@ -6,11 +6,11 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:37:29 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/18 11:59:01 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:57:25 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc_bonus/so_long_bonus.h"
+#include "so_long_bonus.h"
 
 int	open_map(char *filename)
 {

@@ -6,11 +6,11 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 12:40:21 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/14 11:53:34 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:17:43 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/get_next_line.h"
+#include "so_long.h"
 #include <unistd.h>
 
 char	*filling_static_storage(int fd, char *storage)

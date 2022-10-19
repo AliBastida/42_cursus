@@ -6,11 +6,11 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 11:12:21 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/14 11:58:33 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:17:10 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
+#include "so_long.h"
 
 int	find_path(t_game *game, int y, int x)
 {

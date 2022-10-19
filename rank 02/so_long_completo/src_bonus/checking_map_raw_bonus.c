@@ -6,11 +6,11 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 11:45:03 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/18 11:46:39 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:53:40 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc_bonus/so_long_bonus.h"
+#include "so_long_bonus.h"
 
 int	check_the_map_raw_is_valid(t_game *game)
 {
