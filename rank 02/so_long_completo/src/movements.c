@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:52:51 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/19 17:18:04 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/19 18:24:55 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	move_if_escape(int keycode, t_game *game)
 		mlx_destroy(game->mlx);
 		exit (0);
 	}
-	ft_printf ("Number of moves: %d\n", game->n_moves);
+	ft_printf ("\rNumber of moves: %d", game->n_moves);
 	check_is_exit(game);
 	return (0);
 }
