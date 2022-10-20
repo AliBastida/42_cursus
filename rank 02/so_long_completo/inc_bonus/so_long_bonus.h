@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 19:45:12 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/19 18:03:29 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/20 14:39:57 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # define IS_FALSE 0
 # define ERROR_NO_PATH "Error: There is no valid path\n"
 # define ESC		53
+# define KEY_EXIT 	17
 # define W			13
 # define A			0
 # define S			1
@@ -69,7 +70,6 @@ typedef struct s_game
 	int		there_is_e;
 }	t_game;
 
-// UTILS
 int		ft_strlen(char *str);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*get_next_line(int fd);
@@ -83,12 +83,8 @@ int		ft_putstr(char *str);
 size_t	ft_len(long n);
 char	*ft_itoa(int n);
 int		ft_putnbr(int n);
-
-//FREEDOM
 void	exit_error_map_raw(t_game *game);
 int		exit_error_matrix(t_game *game);
-
-// MOVIMIENTOS
 int		ft_movements(int keycode, t_game *game);
 char	ft_get_direction(int keycode);
 void	init_player_position(t_game *game);
@@ -97,8 +93,6 @@ int		check_right(t_game *game);
 int		check_up(t_game *game);
 int		check_down(t_game *game);
 int		check_is_exit(t_game *game);
-
-// MAPA
 int		create_matrix(t_game *game);
 int		open_map(char *filename);
 int		take_the_map(char *filename, t_game *game);
@@ -107,15 +101,11 @@ int		fill_the_matrix(t_game *game);
 int		parse_the_map(int fd, t_game *game);
 void	ft_print_map(t_game *game);
 void	print_map(t_game *game);
-
-// IMAGENES
 void	upload_img(t_game *game);
 void	print_left(t_game *game);
 void	print_right(t_game *game);
 void	print_up(t_game *game);
 void	print_down(t_game *game);
-
-// CHECKER
 int		check_num_params_are_valid(int argc);
 int		check_filename_is_valid(char *filename);
 int		check_params_are_valids(int argc, char **argv);
@@ -126,5 +116,7 @@ int		characters_needed(t_game *game);
 int		characters_are_valid(t_game *game);
 int		check_the_map_raw_is_valid(t_game *game);
 int		checking_the_map(int fd, t_game *game);
+void	upload_black_square(t_game *game, int height, int width);
+int		close_window(t_game *game);
 
 #endif

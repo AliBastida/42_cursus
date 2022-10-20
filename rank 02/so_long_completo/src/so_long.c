@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:48:19 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/19 15:27:40 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/20 12:50:01 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ int	main(int argc, char **argv)
 	upload_img(&game);
 	print_map(&game);
 	mlx_hook(game.mlx_win, 2, 0, ft_movements, &game);
+	mlx_hook(game.mlx_win, KEY_EXIT, 0, close_window, &game);
 	mlx_loop(game.mlx);
 }

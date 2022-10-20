@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 11:12:21 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/19 17:53:58 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/20 14:25:59 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ int	find_path(t_game *game, int y, int x)
 	find_path(game, y + 1, x);
 	find_path(game, y - 1, x);
 	if (game->is_exit == 1)
-	{
-		ft_printf("el camino seguido: %d %d\n", y, x);
 		return (IS_TRUE);
-	}
 	return (IS_FALSE);
 }

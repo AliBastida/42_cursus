@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 12:42:50 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/19 17:58:59 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/20 14:37:49 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@
 char	*get_next_line(int fd);
 char	*ft_strchr(char *s, int c);
 char	*ft_strjoin(const char *s1, const char *s2);
-int    ft_strlen(char *str);
+int		ft_strlen(char *str);
 
 #endif

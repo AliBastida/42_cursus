@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:04:02 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/19 17:16:45 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/20 12:28:26 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	check_is_exit(t_game *game)
 		|| (game->map[game->player_y - 1][game->player_x] == 'E')
 		|| (game->map[game->player_y + 1][game->player_x] == 'E')))
 	{
-		write (1, "\e[1;35mYOU HAVE WIN \e[0m\n", 25);
+		write (1, "\n\e[1;35mYOU HAVE WIN \e[0m\n", 26);
 		exit (0);
 	}
 	return (1);

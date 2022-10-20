@@ -6,7 +6,7 @@
 #    By: abastida <abastida@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/10 19:32:04 by abastida          #+#    #+#              #
-#    Updated: 2022/10/19 18:17:18 by abastida         ###   ########.fr        #
+#    Updated: 2022/10/20 14:12:27 by abastida         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,7 @@ SRC_BONUS = /src_bonus/so_long_bonus.c \
 	/src_bonus/checking_map_raw_bonus.c \
 	/src_bonus/get_next_line.c \
 	/src_bonus/get_next_line_utils.c \
+	/src_bonus/image_square_bonus.c \
 	
 
 OBJ = $(addprefix .,$(addsuffix .o,$(notdir $(basename $(SRC)))))
@@ -97,7 +98,7 @@ make_libs_B :
 	
 
 -include $(DEPS)
-$(NAME): $(OBJ) $(LIBS)#aqui añadiria los .a como dependencias para que si cambia vuelva a recmopilar 
+$(NAME): $(OBJ) $(LIBS)
 	$(CC) $(CFLAGS) $(LIBPATH) $(LDLIBS) $(FRAMES) $(OBJ) -o $(NAME)
 	
 bonus:  make_libs_B $(NAME_BONUS)
@@ -118,15 +119,18 @@ clean:
 	$(MAKE) clean -C libft
 	
 
-fclean: clean
+fclean:
+	$(MAKE) clean
 	$(RM) $(NAME) 
 	$(MAKE) clean -C mlx
 	$(MAKE) fclean -C ft_printf
 	$(MAKE) fclean -C libft
 	
 
-re: fclean
+re: 
+	$(MAKE)	fclean
 	$(MAKE)
+	
 
 .PHONY: make_libs  make_libs_B all clean fclean re bonus #aun no está funcional. No me borra los .o 
 

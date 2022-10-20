@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 16:17:51 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/19 17:16:39 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/20 13:44:59 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ static int	error_message(void)
 {
 	write (2, "Error: There is a problem with the characters\n", 46);
 	exit (1);
-
 }
 
 int	characters_are_valid(t_game *game)

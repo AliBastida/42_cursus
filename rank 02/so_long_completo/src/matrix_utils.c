@@ -6,23 +6,11 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:47:11 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/19 15:25:28 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/20 13:52:06 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-static void ft_print_map(t_game *game)
-{
-    for (int y = 0; y < game->map_height; y++)
-    {
-        for (int x = 0; x < game->map_width; x++)
-        {
-            printf("%c", game->map[y][x]);
-        }
-        printf("\n");
-    }
-}
 
 int	create_matrix(t_game *game)
 {
@@ -44,7 +32,6 @@ int	create_matrix(t_game *game)
 	return (1);
 }
 
-
 int	fill_the_matrix(t_game *game)
 {
 	int	cont_x;
@@ -54,7 +41,6 @@ int	fill_the_matrix(t_game *game)
 	cont_x = 0;
 	cont_y = 0;
 	i = 0;
-	
 	while (cont_y < game->map_height)
 	{
 		cont_x = 0;
@@ -65,12 +51,11 @@ int	fill_the_matrix(t_game *game)
 			i++;
 		}
 		cont_y++;
-		while(game->map_raw[i] == '\n')
+		while (game->map_raw[i] == '\n')
 			i++;
 		if (game->map_raw[i] == '\0')
 			return (1);
 	}
-	ft_print_map(game);
 	return (0);
 }
 

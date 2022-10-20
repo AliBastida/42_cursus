@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:21:07 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/19 17:16:51 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/20 13:45:44 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,8 @@ int	map_is_surrounded_by_one(t_game *game)
 		{
 			printf ("game->map[0][%d] = %c\n", x, game->map[0][x]);
 			error_message();
-			}
+		}
 		x++;
-		
 	}
 	y = 0;
 	x = game->map_width;
