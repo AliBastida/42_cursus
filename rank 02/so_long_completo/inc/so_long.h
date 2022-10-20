@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 19:45:12 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/20 14:04:04 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/20 16:04:39 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@
 typedef struct s_img
 {
 	void	*img_ptr;
-	int		*data;
 }	t_img;
+
 
 typedef struct s_game
 {
@@ -52,7 +52,6 @@ typedef struct s_game
 	t_img	*img;
 	char	*map_raw;
 	char	**map;
-	char	**map_copy;
 	int		map_height;
 	int		map_width;
 	int		player_x;
@@ -95,6 +94,7 @@ int		check_params_are_valids(int argc, char **argv);
 void	exit_error_map_raw(t_game *game);
 int		exit_error_matrix(t_game *game);
 int		close_window(t_game *game);
+int		free_and_exit(t_game *game);
 
 // finding path
 int		find_path(t_game *game, int y, int x);

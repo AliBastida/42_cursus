@@ -6,7 +6,7 @@
 #    By: abastida <abastida@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/10 19:32:04 by abastida          #+#    #+#              #
-#    Updated: 2022/10/20 14:12:27 by abastida         ###   ########.fr        #
+#    Updated: 2022/10/20 15:18:15 by abastida         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,11 +53,12 @@ SRC_BONUS = /src_bonus/so_long_bonus.c \
 
 OBJ = $(addprefix .,$(addsuffix .o,$(notdir $(basename $(SRC)))))
 
+
 OBJ_BONUS = $(addprefix .,$(addsuffix .o,$(notdir $(basename $(SRC_BONUS)))))
 
 DEPS = $(addprefix .,$(addsuffix .d,$(notdir $(basename $(SRC)))))
 
-DEPS_BONUS = $(addprefix .,$(addsuffix .d,$(notdir$(basename $(SRC_BONUS)))))
+DEPS_BONUS = $(addprefix .,$(addsuffix .d,$(notdir $(basename $(SRC_BONUS)))))
 
 HEADER = inc/ 
 
@@ -127,9 +128,9 @@ fclean:
 	$(MAKE) fclean -C libft
 	
 
-re: 
+re:  
 	$(MAKE)	fclean
-	$(MAKE)
+	$(MAKE) all
 	
 
 .PHONY: make_libs  make_libs_B all clean fclean re bonus #aun no está funcional. No me borra los .o 

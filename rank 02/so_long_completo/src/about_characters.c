@@ -6,15 +6,16 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 16:17:51 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/20 13:44:59 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/20 16:27:13 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static int	error_message(void)
+static int	error_message(t_game *game)
 {
 	write (2, "Error: There is a problem with the characters\n", 46);
+	free (game);
 	exit (1);
 }
 
@@ -33,7 +34,7 @@ int	characters_are_valid(t_game *game)
 				&& game->map_raw[i] != 'E'
 				&& game->map_raw[i] != 'P'
 				&& game->map_raw[i] != '\n')
-				error_message();
+				error_message(game);
 			i++;
 		}
 	}
@@ -60,8 +61,11 @@ int	characters_needed(t_game *game)
 	}
 	game->num_collectives = game->there_is_c;
 	if (game->there_is_p == 0 || game->there_is_c == 0 || game->there_is_e == 0)
-		error_message();
+		free_and_exit(game);
 	if (game->there_is_p != 1)
-		error_message();
+		free_and_exit(game);
+	if (game->there_is_e != 1)
+		free_and_exit(game);
+		
 	return (1);
 }

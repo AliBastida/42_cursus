@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:48:19 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/20 12:50:01 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/20 15:46:46 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	struct_init(t_game *game)
 	game->img = NULL;
 	game->map_raw = NULL;
 	game->map = NULL;
-	game->map_copy = NULL;
 	game->map_height = 0;
 	game->map_width = 0;
 	game->player_x = 0;
