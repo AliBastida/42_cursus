@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 14:34:58 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/21 14:17:32 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/21 14:24:54 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,11 @@ int	close_window(t_game *game)
 	exit (EXIT_SUCCESS);
 }
 
-void ft_exit (int n)
+void	ft_exit(int n)
 {
 	if (n == 1)
 	{
 		ft_printf("Error: File cannot be opened\n");
 		exit (0);
 	}
-
 }
