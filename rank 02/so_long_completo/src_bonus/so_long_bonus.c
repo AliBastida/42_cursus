@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:48:19 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/20 14:20:08 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/21 11:52:12 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 	t_game	game;
 
 	struct_init (&game);
-	if (!check_params_are_valids(argc, argv))
+	if (!check_params_are_valid(argc, argv))
 		return (0);
 	if (!take_the_map(argv[1], &(game)))
 		return (0);

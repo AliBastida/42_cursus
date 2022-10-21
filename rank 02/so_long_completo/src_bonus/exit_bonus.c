@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 14:34:58 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/20 14:20:32 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:02:12 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,19 @@ int	exit_error_matrix(t_game *game)
 		free(game->map[y]);
 		y++;
 	}
+	ft_printf ("There is an error creating the game\n");
 	free (game->map);
-	return (0);
+	exit (1);
+}
+
+int	free_and_exit(t_game *game)
+{
+	int	i;
+
+	i = 0;
+	while (game->img[i++].img_ptr)
+		free(game->img);
+	exit (1);
 }
 
 int	close_window(t_game *game)

@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 14:10:23 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/19 17:56:04 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/21 11:35:51 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strchr( char *s, int c)
+char	*ft_strchr(char *s, int c)
 {
 	if (!s)
 		return (0);

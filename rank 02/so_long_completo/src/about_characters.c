@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 16:17:51 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/20 16:27:13 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/21 13:45:37 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,5 @@ int	characters_needed(t_game *game)
 		free_and_exit(game);
 	if (game->there_is_e != 1)
 		free_and_exit(game);
-		
 	return (1);
 }

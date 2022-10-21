@@ -6,12 +6,11 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:52:51 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/20 14:52:34 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:17:51 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
-#include "libftprintf.h"
 
 int	ft_movements_continue(int keycode, t_game *game)
 {
@@ -49,6 +48,18 @@ int	move_if_escape(int keycode, t_game *game)
 	return (0);
 }
 
+static void	putting_black_square_image(t_game *game)
+{
+	char	*mov_for_itoa;
+
+	mlx_put_image_to_window(game->mlx, game->mlx_win, game->img[8].img_ptr,
+		(game->map_width * 50) - 150, (game->map_height * 50));
+	mov_for_itoa = ft_itoa(game->n_moves);
+	mlx_string_put(game->mlx, game->mlx_win, (game->map_width * 50) - 150,
+		(game->map_height * 50) + 25, 2813300, mov_for_itoa);
+	free(mov_for_itoa);
+}
+
 int	ft_movements(int keycode, t_game *game)
 {
 	game->new_position = keycode;
@@ -69,10 +80,7 @@ int	ft_movements(int keycode, t_game *game)
 		}
 	}
 	ft_movements_continue(keycode, game);
-	mlx_put_image_to_window(game->mlx, game->mlx_win, game->img[8].img_ptr,
-		(game->map_width * 50) - 150, (game->map_height * 50));
-	mlx_string_put(game->mlx, game->mlx_win, (game->map_width * 50) - 150,
-		(game->map_height * 50) + 25, 2813300, ft_itoa(game->n_moves));
 	move_if_escape(keycode, game);
+	putting_black_square_image(game);
 	return (0);
 }

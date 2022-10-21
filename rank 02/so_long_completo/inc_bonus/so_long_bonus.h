@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 19:45:12 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/20 14:39:57 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:17:04 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,53 +70,76 @@ typedef struct s_game
 	int		there_is_e;
 }	t_game;
 
-int		ft_strlen(char *str);
-char	*ft_strjoin(const char *s1, const char *s2);
-char	*get_next_line(int fd);
-char	*extract_line(char *storage);
-char	*save_storage(char *storage);
-void	struct_init(t_game *game);
-int		ft_format(va_list arg, const char type);
-int		ft_printf(const char *str, ...);
-int		ft_putchar(int c);
-int		ft_putstr(char *str);
-size_t	ft_len(long n);
-char	*ft_itoa(int n);
-int		ft_putnbr(int n);
-void	exit_error_map_raw(t_game *game);
-int		exit_error_matrix(t_game *game);
-int		ft_movements(int keycode, t_game *game);
-char	ft_get_direction(int keycode);
-void	init_player_position(t_game *game);
+//about_characters
+int		characters_are_valid(t_game *game);
+int		characters_needed(t_game *game);
+
+//chec_move_bonus
+int		check_is_exit(t_game *game);
 int		check_left(t_game *game);
 int		check_right(t_game *game);
 int		check_up(t_game *game);
 int		check_down(t_game *game);
-int		check_is_exit(t_game *game);
-int		create_matrix(t_game *game);
-int		open_map(char *filename);
+
+//checking_the_map_raw
+int		check_the_map_raw_is_valid(t_game *game);
+int		map_is_surrounded_by_one(t_game *game);
+
+//checking_the_map
+int		check_num_params_are_valid(int argc);
+int		check_filename_is_valid(char *filename);
+int		checking_the_map(int fd, t_game *game);
 int		take_the_map(char *filename, t_game *game);
-int		the_map_is_rectangular(t_game *game);
-int		fill_the_matrix(t_game *game);
+int		check_params_are_valid(int argc, char **argv);
+
+//exit
+void	exit_error_map_raw(t_game *game);
+int		exit_error_matrix(t_game *game);
+int		free_and_exit(t_game *game);
+int		close_window(t_game *game);
+
+//finding_path
+int		find_path(t_game *game, int y, int x);
+
+//get_next_line
+char	*filling_staatic_storage(int fd, char *storage);
+char	*extract_line(char *storage);
+char	*save_storage(char *storage);
+char	*get_next_line(int fd);
+
+//get_next_line_utils
+int		ft_strlen(char *str);
+char	*ft_strchr(char *s, int c);
+char	*extract_line(char *storage);
+char	*ft_strjoin(const char *s1, const char *s2);
+
+//image_square
+void	upload_black_square(t_game *game, int height, int width);
+
+//map_utils
+int		open_map(char *filename);
 int		parse_the_map(int fd, t_game *game);
-void	ft_print_map(t_game *game);
+int		check_map_have_minimal_size(t_game *game);
+int		the_map_is_rectangular(t_game *game);
+
+//matrix_utils
+int		create_matrix(t_game *game);
+int		fill_the_matrix(t_game *game);
+void	init_player_position(t_game *game);
+
+//movements
+int		ft_movements(int keycode, t_game *game);
+int		ft_movements_continue(int keycode, t_game *game);
+int		move_if_escape(int keycode, t_game *game);
+
+//print_map
 void	print_map(t_game *game);
+
+//print_move_bonus
 void	upload_img(t_game *game);
 void	print_left(t_game *game);
 void	print_right(t_game *game);
 void	print_up(t_game *game);
 void	print_down(t_game *game);
-int		check_num_params_are_valid(int argc);
-int		check_filename_is_valid(char *filename);
-int		check_params_are_valids(int argc, char **argv);
-int		check_map_have_minimal_size(t_game *game);
-int		the_map_is_surrounded_by_one(t_game *game);
-int		find_path(t_game *game, int y, int x);
-int		characters_needed(t_game *game);
-int		characters_are_valid(t_game *game);
-int		check_the_map_raw_is_valid(t_game *game);
-int		checking_the_map(int fd, t_game *game);
-void	upload_black_square(t_game *game, int height, int width);
-int		close_window(t_game *game);
 
 #endif

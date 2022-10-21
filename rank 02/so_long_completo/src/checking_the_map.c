@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:51:33 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/20 13:46:51 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/21 13:37:25 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,19 @@ int	checking_the_map(int fd, t_game *game)
 {
 	if (!parse_the_map(fd, game))
 		return (0);
+	ft_printf("aqui2.1\n");
 	if (!check_the_map_raw_is_valid(game))
 		return (0);
+	ft_printf("aqui2.2\n");
 	if (!create_matrix(game))
 		return (exit_error_matrix(game));
+	ft_printf("aqui2.3\n");	
 	if (!fill_the_matrix(game))
 		return (exit_error_matrix(game));
+	ft_printf("aqui2.4\n");	
 	if (!map_is_surrounded_by_one(game))
 		return (exit_error_matrix(game));
+	ft_printf("aqui2.5\n");	
 	init_player_position(game);
 	if (!find_path(game, game->player_y, game->player_x))
 	{
@@ -78,8 +83,6 @@ int	take_the_map(char *filename, t_game *game)
 	int	fd;
 
 	fd = open_map(filename);
-	if (fd == 0)
-		return (0);
 	if (!checking_the_map(fd, game))
 		return (0);
 	return (1);

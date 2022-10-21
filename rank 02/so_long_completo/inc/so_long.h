@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 19:45:12 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/20 16:04:39 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/21 13:52:12 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ typedef struct s_img
 {
 	void	*img_ptr;
 }	t_img;
-
 
 typedef struct s_game
 {
@@ -95,6 +94,7 @@ void	exit_error_map_raw(t_game *game);
 int		exit_error_matrix(t_game *game);
 int		close_window(t_game *game);
 int		free_and_exit(t_game *game);
+void	ft_exit (int n);
 
 // finding path
 int		find_path(t_game *game, int y, int x);

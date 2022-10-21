@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 14:34:58 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/20 16:36:56 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/21 13:52:10 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,20 @@ int	exit_error_matrix(t_game *game)
 	exit (1);
 }
 
+void ft_exit (int n)
+{
+	if (n == 1)
+	{
+		ft_printf("Error: File cannot be opened\n");
+		exit (0);
+	}
+
+}
+
 int	free_and_exit(t_game *game)
 {
-	int i; 
-	
+	int	i;
+
 	i = 0;
 	while (game->img[i++].img_ptr)
 		free(game->img);
@@ -49,13 +59,3 @@ int	close_window(t_game *game)
 	mlx_destroy_window(game->mlx, game->mlx_win);
 	exit (EXIT_SUCCESS);
 }
-	
-	
-	
-	
-	/*void	*mlx;
-	void	*mlx_win;
-	t_img	*img;
-	char	*map_raw;
-	char	**map;
-	char	**map_copy;*/

@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:28:12 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/20 16:22:45 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/21 10:42:11 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,8 @@ void	upload_img(t_game *game)
 	height = 0;
 	width = 0;
 	game->img = (t_img *)malloc(sizeof(t_img) * (8 + 1));
-		if (!game->img)
-			free (game->img);
+	if (!game->img)
+		free (game->img);
 	upload_images_1 (game, height, width);
 	upload_images_2 (game, height, width);
 	upload_images_3 (game, height, width);

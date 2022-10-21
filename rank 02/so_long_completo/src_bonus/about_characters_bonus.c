@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 16:17:51 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/20 14:36:17 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:01:16 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,10 @@ int	characters_needed(t_game *game)
 	}
 	game->num_collectives = game->there_is_c;
 	if (game->there_is_p == 0 || game->there_is_c == 0 || game->there_is_e == 0)
-		error_message();
+		free_and_exit(game);
 	if (game->there_is_p != 1)
-		error_message();
+		free_and_exit(game);
+	if (game->there_is_e != 1)
+		free_and_exit(game);
 	return (1);
 }

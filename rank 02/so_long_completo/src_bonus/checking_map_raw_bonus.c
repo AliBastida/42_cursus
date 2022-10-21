@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 11:45:03 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/19 17:53:40 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/21 11:19:08 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,7 @@ int	check_the_map_raw_is_valid(t_game *game)
 	return (1);
 }
 
-static int	error_message(void)
-{
-	write (2, "Error: The map is not surrounded by walls\n", 42);
-	return (0);
-}
-
-int	the_map_is_surrounded_by_one(t_game *game)
+int	map_is_surrounded_by_one(t_game *game)
 {
 	int	y;
 	int	x;
@@ -41,7 +35,10 @@ int	the_map_is_surrounded_by_one(t_game *game)
 	while (game->map_width > x)
 	{
 		if (game->map[0][x] != '1' || game->map[y - 1][x] != '1')
-			error_message();
+		{
+			printf ("game->map[0][%d] = %c\n", x, game->map[0][x]);
+			exit_error_matrix(game);
+		}
 		x++;
 	}
 	y = 0;
@@ -49,7 +46,7 @@ int	the_map_is_surrounded_by_one(t_game *game)
 	while (game->map_height > y)
 	{
 		if (game->map[y][0] != '1' || game->map[y][x - 1] != '1')
-			error_message();
+			exit_error_matrix(game);
 		y++;
 	}
 	return (1);
