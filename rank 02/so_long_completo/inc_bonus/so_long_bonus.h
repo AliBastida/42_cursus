@@ -6,14 +6,13 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 19:45:12 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/21 12:17:04 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/21 14:17:05 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_BONUS_H
 # define SO_LONG_BONUS_H
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <fcntl.h>
@@ -97,6 +96,7 @@ void	exit_error_map_raw(t_game *game);
 int		exit_error_matrix(t_game *game);
 int		free_and_exit(t_game *game);
 int		close_window(t_game *game);
+void	ft_exit(int n);
 
 //finding_path
 int		find_path(t_game *game, int y, int x);

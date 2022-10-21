@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:37:29 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/21 11:39:51 by abastida         ###   ########.fr       */
+/*   Updated: 2022/10/21 14:09:01 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,18 @@ int	open_map(char *filename)
 int	parse_the_map(int fd, t_game *game)
 {
 	char	*line;
-
-	game->map_raw = NULL;
+	
 	line = get_next_line(fd);
-	while (line != NULL)
+	if (line == NULL || line[0] == '\n')
+		ft_exit (1);
+	else
 	{
-		game->map_raw = ft_strjoin(game->map_raw, line);
-		free(line);
-		line = get_next_line(fd);
+		while (line != NULL)
+		{
+			game->map_raw = ft_strjoin(game->map_raw, line);
+			free(line);
+			line = get_next_line(fd);
+		}
 	}
 	return (1);
 }
