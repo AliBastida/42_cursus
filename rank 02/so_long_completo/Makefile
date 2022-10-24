@@ -14,7 +14,7 @@ NAME = so_long
 NAME_BONUS = .bonus
 CC = gcc
 RM = rm -fr
-CFLAGS = -Wall -Werror -Wextra -MMD
+CFLAGS = -g -Wall -Werror -Wextra -MMD
 
 SRC = /src/so_long.c \
 	/src/map_utils.c \
