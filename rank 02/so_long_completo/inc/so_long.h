@@ -29,14 +29,14 @@
 # define A			0
 # define S			1
 # define D			2
-# define GRASS 		"img/xpm/grass.xpm"
+# define GRASS 		"img/xpm/suelo.xpm"
 # define WALL  		"img/xpm/wall.xpm"
-# define FRONT_P 	"img/xpm/frontprincess.xpm"
+# define FRONT_P 	"img/xpm/front.xpm"
 # define EXIT		"img/xpm/exit.xpm"
-# define BACK_P		"img/xpm/backprincess.xpm"
-# define LEFT_P		"img/xpm/leftprincess.xpm"
-# define RIGHT_P	"img/xpm/rightprincess.xpm"
-# define COLL		"img/xpm/collectible.xpm"
+# define BACK_P		"img/xpm/back.xpm"
+# define LEFT_P		"img/xpm/left.xpm"
+# define RIGHT_P	"img/xpm/right.xpm"
+# define COLL		"img/xpm/coll.xpm"
 # define BLACK_SQUARE "img/xpm/blacksquare.xpm"
 
 typedef struct s_img
