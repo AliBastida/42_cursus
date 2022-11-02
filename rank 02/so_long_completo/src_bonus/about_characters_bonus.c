@@ -6,18 +6,18 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 16:17:51 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/21 12:01:16 by abastida         ###   ########.fr       */
+/*   Updated: 2022/11/02 16:27:23 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include "../inc_bonus/so_long_bonus.h"
 
-static int	error_message(void)
+static int	error_message(t_game *game)
 {
+	free(game->map_raw);
 	write (2, "Error: There is a problem with the characters\n", 46);
 	exit (1);
 }
-
 int	characters_are_valid(t_game *game)
 {
 	int	i;
@@ -33,7 +33,7 @@ int	characters_are_valid(t_game *game)
 				&& game->map_raw[i] != 'E'
 				&& game->map_raw[i] != 'P'
 				&& game->map_raw[i] != '\n')
-				error_message();
+				error_message(game);
 			i++;
 		}
 	}
@@ -60,10 +60,10 @@ int	characters_needed(t_game *game)
 	}
 	game->num_collectives = game->there_is_c;
 	if (game->there_is_p == 0 || game->there_is_c == 0 || game->there_is_e == 0)
-		free_and_exit(game);
+		error_message(game);
 	if (game->there_is_p != 1)
-		free_and_exit(game);
+		error_message(game);
 	if (game->there_is_e != 1)
-		free_and_exit(game);
+		error_message(game);
 	return (1);
 }

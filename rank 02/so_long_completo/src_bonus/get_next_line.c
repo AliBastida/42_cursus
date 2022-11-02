@@ -6,11 +6,11 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 12:40:21 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/21 11:27:14 by abastida         ###   ########.fr       */
+/*   Updated: 2022/11/02 13:07:39 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include "../inc_bonus/so_long_bonus.h"
 
 char	*filling_static_storage(int fd, char *storage)
 {

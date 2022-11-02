@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 14:34:58 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/21 14:22:11 by abastida         ###   ########.fr       */
+/*   Updated: 2022/11/02 16:16:27 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	exit_error_map_raw(t_game *game)
 {
 	free (game->map_raw);
+	ft_printf("Error: there is a problem with the map\n");
 	exit (1);
 }
 

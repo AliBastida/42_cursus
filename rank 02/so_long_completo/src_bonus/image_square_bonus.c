@@ -6,11 +6,11 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:11:29 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/21 11:37:33 by abastida         ###   ########.fr       */
+/*   Updated: 2022/11/02 13:07:49 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include "../inc_bonus/so_long_bonus.h"
 
 void	upload_black_square(t_game *game, int height, int width)
 {

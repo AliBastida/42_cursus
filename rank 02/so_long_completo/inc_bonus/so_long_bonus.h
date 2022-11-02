@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 19:45:12 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/21 14:17:05 by abastida         ###   ########.fr       */
+/*   Updated: 2022/11/02 13:13:11 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <stdlib.h>
 # include <string.h>
 # include <fcntl.h>
-# include "libftprintf.h"
-# include "get_next_line.h"
-# include "mlx.h"
+# include "../inc_bonus/libftprintf.h"
+# include "../inc_bonus/get_next_line.h"
+# include "../mlx/mlx.h"
 
 # define IS_TRUE 1
 # define IS_FALSE 0
@@ -111,7 +111,7 @@ char	*get_next_line(int fd);
 int		ft_strlen(char *str);
 char	*ft_strchr(char *s, int c);
 char	*extract_line(char *storage);
-char	*ft_strjoin(const char *s1, const char *s2);
+char	*ft_strjoin(char *s1, char *s2);
 
 //image_square
 void	upload_black_square(t_game *game, int height, int width);

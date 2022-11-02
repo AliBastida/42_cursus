@@ -6,11 +6,11 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 11:12:21 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/21 11:25:35 by abastida         ###   ########.fr       */
+/*   Updated: 2022/11/02 13:07:18 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include "../inc_bonus/so_long_bonus.h"
 
 int	find_path(t_game *game, int y, int x)
 {

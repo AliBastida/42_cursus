@@ -6,11 +6,11 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 14:34:58 by abastida          #+#    #+#             */
-/*   Updated: 2022/10/21 14:24:54 by abastida         ###   ########.fr       */
+/*   Updated: 2022/11/02 13:08:48 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include "../inc_bonus/so_long_bonus.h"
 
 void	exit_error_map_raw(t_game *game)
 {

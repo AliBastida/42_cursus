@@ -6,7 +6,7 @@
 #    By: abastida <abastida@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/10 19:32:04 by abastida          #+#    #+#              #
-#    Updated: 2022/10/20 15:18:15 by abastida         ###   ########.fr        #
+#    Updated: 2022/11/02 16:41:29 by abastida         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,16 +53,16 @@ SRC_BONUS = /src_bonus/so_long_bonus.c \
 
 OBJ = $(addprefix .,$(addsuffix .o,$(notdir $(basename $(SRC)))))
 
-
-OBJ_BONUS = $(addprefix .,$(addsuffix .o,$(notdir $(basename $(SRC_BONUS)))))
+OBJ_BONUS = $(addprefix .,$(addsuffix .o,$(basename $(SRC_BONUS))))
 
 DEPS = $(addprefix .,$(addsuffix .d,$(notdir $(basename $(SRC)))))
 
-DEPS_BONUS = $(addprefix .,$(addsuffix .d,$(notdir $(basename $(SRC_BONUS)))))
+DEPS_BONUS = $(addprefix .,$(addsuffix .d,$(basename $(SRC_BONUS))))
 
 HEADER = inc/ 
 
 LIBS = mlx/libmlx.a ft_printf/libftprintf.a
+
 LIBS_B = mlx/libmlx.a ft_printf/libftprintf.a libft/libft.a
 
 HEADER_BONUS = inc_bonus/
@@ -70,11 +70,13 @@ HEADER_BONUS = inc_bonus/
 LIBPATH = -L mlx -L ft_printf -L libft
 
 LDLIBS = -lmlx -lftprintf 
+
 LDLIBS_B = -lmlx -lftprintf -lft
 
 FRAMES = -framework OpenGL -framework AppKit  
 
 INCLUDES = -I mlx -I $(HEADER) 
+
 INCLUDES_BONUS = -I mlx -I $(HEADER_BONUS) -I libft
 
 .%.o: src/%.c
@@ -104,7 +106,7 @@ $(NAME): $(OBJ) $(LIBS)
 	
 bonus:  make_libs_B $(NAME_BONUS)
 
--include $(DEPS_BONUS)	
+-include $(DEPS_BONUS)
 $(NAME_BONUS) : $(OBJ_BONUS) $(LIBS_B)
 	$(CC) $(CFLAGS) $(LIBPATH) $(LDLIBS_B) $(FRAMES) $(OBJ_BONUS) -o $(NAME)
 	touch $@
@@ -120,9 +122,10 @@ clean:
 	$(MAKE) clean -C libft
 	
 
-fclean:
+fclean: 
 	$(MAKE) clean
-	$(RM) $(NAME) 
+	$(RM) $(NAME)
+	$(RM) $(NAME_BONUS)
 	$(MAKE) clean -C mlx
 	$(MAKE) fclean -C ft_printf
 	$(MAKE) fclean -C libft
