@@ -18,6 +18,7 @@ static int	error_message(t_game *game)
 	write (2, "Error: There is a problem with the characters\n", 46);
 	exit (1);
 }
+
 int	characters_are_valid(t_game *game)
 {
 	int	i;
