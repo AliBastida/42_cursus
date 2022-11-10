@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abastida <abastida@student.42barcel>       +#+  +:+       +#+        */
+/*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:26:23 by abastida          #+#    #+#             */
-/*   Updated: 2022/11/10 13:50:55 by abastida         ###   ########.fr       */
+/*   Updated: 2022/11/10 17:13:49 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <signal.h>
 #include <stdlib.h>
 #include <unistd.h>
-//#include "libftprintf.h"
+#include "libftprintf.h"
 
 void	sending_byte(int pid, char byte)
 {
@@ -54,5 +54,7 @@ int	main(int argc, char **argv)
 		}
 		sending_byte(atoi(argv[1]), '\0');
 	}
+	else
+		write(1, "Invalid number of arguments\n", 29);
 	return (0);
 }
