@@ -6,14 +6,14 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:27:39 by abastida          #+#    #+#             */
-/*   Updated: 2022/11/10 17:13:56 by abastida         ###   ########.fr       */
+/*   Updated: 2022/11/11 12:13:57 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <signal.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "libftprintf.h"
+#include "libft.h"
 #include <stdio.h>
 
 int counting_bits;
@@ -47,7 +47,7 @@ int	main(void)
 	if(pid == 0)
 		sleep(5);
 	signal.sa_sigaction = &handler;
-	signal.sa_flags = sa_siginfo;
+	signal.sa_flags = SA_SIGINFO;
 	sigaction(SIGUSR1, &signal, NULL);
 	sigaction(SIGUSR2, &signal, NULL);
 	while (1)

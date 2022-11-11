@@ -6,14 +6,14 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:26:23 by abastida          #+#    #+#             */
-/*   Updated: 2022/11/10 17:13:49 by abastida         ###   ########.fr       */
+/*   Updated: 2022/11/11 12:12:29 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <signal.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "libftprintf.h"
+#include "libft.h"
 
 void	sending_byte(int pid, char byte)
 {

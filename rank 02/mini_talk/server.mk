@@ -6,38 +6,40 @@
 #    By: abastida <abastida@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 13:51:08 by abastida          #+#    #+#              #
-#    Updated: 2022/11/10 17:24:12 by abastida         ###   ########.fr        #
+#    Updated: 2022/11/11 12:22:21 by abastida         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := server
 SRC := server.c
-OBJ := $(addsufix .o, $(addprefix ., $(basename $(SRC))))
-DEP := $(addsufix .d, $(addprefix ., $(basename $(SRC))))
+OBJ := $(addsuffix .o, $(addprefix ., $(basename $(SRC))))
+DEP := $(addsuffix .d, $(addprefix ., $(basename $(SRC))))
 
 CC := gcc
 CFLAGS := -Wall -Werror -Wextra -g -MMD
 RM := rm -rf
 LIBS := libftprintf/libftprintf.a
-LIBPATH := -lftprintf
+LIBPATH := -L libftprintf -lftprintf
 INCLUDE := -I libftprintf
 
-.%.o = %.c
+.%.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
-all := $(NAME)
+all: $(NAME)
 
 -include $(DEP)
-$(NAME): $(OBJ) $(LIBS)
+$(NAME): $(LIBS) $(OBJ)
 	$(CC) $(CFLAGS) $(LIBPATH) $(OBJ) -o $(NAME)
+
+$(LIBS):
+	$(MAKE) -C libftprintf
 
 clean:
 	$(RM) $(OBJ)
 	$(RM) $(DEP)
 	$(MAKE) clean -C libftprintf
 
-fclean:
-	$(MAKE) clean
+fclean: clean
 	$(RM) $(NAME)
 	$(MAKE) fclean -C libftprintf
 

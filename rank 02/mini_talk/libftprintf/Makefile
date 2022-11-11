@@ -13,7 +13,7 @@ SRC := /src/ft_atoi.c  /src/ft_bzero.c /src/ft_calloc.c /src/ft_hexa.c /src/ft_i
 
 OBJ := $(addprefix .,$(addsuffix .o,$(notdir $(basename $(SRC)))))
 DEP := $(addprefix .,$(addsuffix .d, $(basename $(SRC))))
-INCLUDE := libftprintf.h
+INCLUDE := libft.h
 MKDIR := mkdir -p
 CC := gcc
 CFLAGS := -Wall -Werror -Wextra -g
@@ -30,16 +30,11 @@ $(NAME) : $(OBJ)
 	ranlib $(NAME)
 
 clean :
-	@echo hola
 	$(RM) $(OBJ)
-	@echo hola Mia
 
 fclean :
-	@echo hola2
 	$(MAKE) clean
-	@echo hola3
 	$(RM) $(NAME)
-	@echo hola4
 
 re: 
 	$(MAKE) fclean
