@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:26:23 by abastida          #+#    #+#             */
-/*   Updated: 2022/11/11 12:12:29 by abastida         ###   ########.fr       */
+/*   Updated: 2022/11/14 14:38:49 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	sending_byte(int pid, char byte)
 		kill_failure = kill(pid,signal);
 		if (kill_failure < 0)
 		{
-			write(1, "Signal error\n", 14);
+			if(write(1, "Signal error\n", 14) == -1)
 			exit(0);
 		}
 		usleep(300);
@@ -55,6 +55,7 @@ int	main(int argc, char **argv)
 		sending_byte(atoi(argv[1]), '\0');
 	}
 	else
-		write(1, "Invalid number of arguments\n", 29);
+		if(write(1, "Invalid number of arguments\n", 29) == -1)
+		   exit(0);
 	return (0);
 }

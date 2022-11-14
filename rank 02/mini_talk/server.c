@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:27:39 by abastida          #+#    #+#             */
-/*   Updated: 2022/11/11 12:13:57 by abastida         ###   ########.fr       */
+/*   Updated: 2022/11/14 10:54:49 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "libft.h"
-#include <stdio.h>
 
 int counting_bits;
 
@@ -29,7 +28,8 @@ void	handler(int signal, siginfo_t *info, void *context)
 	counting_bits++;
 	if (counting_bits == 8)
 	{
-		write(1, &saved_bytes, 1);
+		if(write(1, &saved_bytes, 1) == -1)
+			exit(0);
 		counting_bits = 0;
 	}
 	saved_bytes <<= 1;
@@ -42,7 +42,7 @@ int	main(void)
 	
 	counting_bits = 0;
 	pid = getpid();
-	if(printf("PID:%d \n", pid) == -1)
+	if(ft_printf("PID:%d \n", pid) == -1)
 		exit(0);
 	if(pid == 0)
 		sleep(5);

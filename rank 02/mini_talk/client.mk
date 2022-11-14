@@ -6,7 +6,7 @@
 #    By: abastida <abastida@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 16:40:54 by abastida          #+#    #+#              #
-#    Updated: 2022/11/11 15:11:15 by abastida         ###   ########.fr        #
+#    Updated: 2022/11/14 10:40:56 by abastida         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME := client
 SRC := client.c
 #OBJ := $(addsuffix .o, $(addprefix ., $(basename $(SRC))))
 OBJ := $(SRC:.c=.o)
-Esta es para que me cree los .o de los .c directamente
+#Esta es para que me cree los .o de los .c directamente
 DEP := $(addsuffix .d, $(addprefix ., $(basename $(SRC))))
 
 CC := gcc
