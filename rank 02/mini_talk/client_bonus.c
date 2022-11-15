@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:26:23 by abastida          #+#    #+#             */
-/*   Updated: 2022/11/15 12:17:18 by abastida         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:32:44 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,19 @@
 #include <unistd.h>
 #include "libft.h"
 
+
+void	reciving_bytes(int signal)
+{
+	static int i = 0;
+
+	if (signal == SIGUSR1)
+		i++;
+	if (signal == SIGUSR2)
+	{
+		write(1, "The signal is recieved\n", 26);
+		exit(0);
+	}
+}
 void	sending_byte(int pid, char byte)
 {
 	int i;
@@ -34,9 +47,10 @@ void	sending_byte(int pid, char byte)
 			if(write(1, "Signal error\n", 14) == -1)
 			exit(0);
 		}
-		usleep(300);
-		byte <<= 1;
+		usleep(200);
+		usleep(100);
 		i++;
+		byte <<= 1;
 	}
 }
 
@@ -45,6 +59,8 @@ int	main(int argc, char **argv)
 	int i;
 
 	i = 0;
+	signal(SIGUSR1, reciving_bytes);
+	signal(SIGUSR2, reciving_bytes);
 	if (argc == 3)
 	{
 		while(argv[2][i])
@@ -57,5 +73,7 @@ int	main(int argc, char **argv)
 	else
 		if(write(1, "Invalid number of arguments\n", 29) == -1)
 		   exit(0);
+	while(1)
+		pause();
 	return (0);
 }

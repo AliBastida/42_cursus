@@ -6,25 +6,25 @@
 #    By: abastida <abastida@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 16:40:54 by abastida          #+#    #+#              #
-#    Updated: 2022/11/14 10:40:56 by abastida         ###   ########.fr        #
+#    Updated: 2022/11/15 13:56:03 by abastida         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := client
 SRC := client.c
-#OBJ := $(addsuffix .o, $(addprefix ., $(basename $(SRC))))
+NAME_BONUS := client_bonus
+SRC_BONUS := client_bonus.c
 OBJ := $(SRC:.c=.o)
+OBJ_BONUS := $(SRC_BONUS:.c=.o)
 #Esta es para que me cree los .o de los .c directamente
-DEP := $(addsuffix .d, $(addprefix ., $(basename $(SRC))))
+DEP_BONUS := $(addsuffix .d, $(addprefix ., $(basename $(SRC_BONUS))))
 
 CC := gcc
 CFLAGS := -Wall -Werror -Wextra -g -MMD -I libftprintf
 RM := rm -rf
 LIBS := libftprintf/libftprintf.a
 LIBPATH := -L libftprintf -lftprintf
-
-#.%.o: %.c
-#	$(CC) $(CFLAGS) -c $< -o $@
+INCLUDE := -I libftprintf
 
 all: $(NAME)
 
@@ -32,21 +32,28 @@ all: $(NAME)
 $(NAME): $(LIBS) $(OBJ)
 	$(CC) $(CFLAGS) $(LIBPATH) $(OBJ) -o $(NAME)
 
+-include $(DEP_BONUS)
+$(NAME_BONUS): $(LIBS) $(OBJ_BONUS)
+	$(CC) $(CFLAGS) $(LIBPATH) $(OBJ_BONUS) -o $(NAME_BONUS)
+
 $(LIBS):
 	$(MAKE) -C libftprintf
 
 clean:
 	$(RM) $(OBJ)
 	$(RM) $(DEP)
+	$(RM) $(OBJ_BONUS)
+	$(RM) $(DEP_BONUS)
 	$(MAKE) clean -C libftprintf
 
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) $(NAME_BONUS)
 	$(MAKE) fclean -C libftprintf
 
 re: 
 	$(MAKE) fclean
 	$(MAKE) all
 
-.PHONY: all clean fclean re 
+.PHONY: all clean fclean re bonus
 
