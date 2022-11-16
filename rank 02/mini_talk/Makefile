@@ -21,6 +21,7 @@ bonus:
 clean:
 	$(MAKE) -f client.mk clean
 	$(MAKE) -f server.mk clean
+
 fclean:
 	$(MAKE) -f client.mk fclean
 	$(MAKE) -f server.mk fclean
