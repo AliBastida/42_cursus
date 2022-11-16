@@ -17,7 +17,7 @@ SRC_BONUS := client_bonus.c
 OBJ := $(SRC:.c=.o)
 OBJ_BONUS := $(SRC_BONUS:.c=.o)
 #Esta es para que me cree los .o de los .c directamente
-DEP := $(addsuffix .d, $(addprefix ., $(basename $(SRC))))
+DEP := $(SRC:.c=.d)
 DEP_BONUS := $(SRC_BONUS:.c=.d)
 
 CC := gcc

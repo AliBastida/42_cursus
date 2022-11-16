@@ -75,6 +75,4 @@ int		ft_printf(const char *str, ...);
 int		ft_puthexa_low(unsigned long num);
 int		ft_puthexa_upper(unsigned long num);
 int		ft_ptrhexa(unsigned long pointer);
-
-
 #endif
