@@ -23,7 +23,7 @@ void	reciving_bytes(int signal)
 		i++;
 	if (signal == SIGUSR2)
 	{
-		write(1, "The signal is recieved\n", 26);
+		write(1, "The signal is recieved\n", 24);
 		exit(0);
 	}
 }

@@ -55,7 +55,7 @@ int	main(int argc, char **argv)
 		sending_byte(atoi(argv[1]), '\0');
 	}
 	else
-		if (write(1, "Invalid number of arguments\n", 29) == -1)
+		if (write(1, "Invalid number of arguments\n", 28) == -1)
 			exit(0);
 	return (0);
 }
