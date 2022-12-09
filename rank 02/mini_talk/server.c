@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:27:39 by abastida          #+#    #+#             */
-/*   Updated: 2022/11/15 12:17:14 by abastida         ###   ########.fr       */
+/*   Updated: 2022/12/07 13:40:06 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	handler(int signal, siginfo_t *info, void *context)
 	if (g_counting_bits == 8)
 	{
 		if (write(1, &saved_bytes, 1) == -1)
-			exit(0);
+			exit(EXIT_FAILURE);
 		g_counting_bits = 0;
 	}
 	saved_bytes <<= 1;

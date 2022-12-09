@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abastida <abastida@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 12:01:42 by abastida          #+#    #+#             */
-/*   Updated: 2022/11/17 10:40:41 by abastida         ###   ########.fr       */
+/*   Created: 2022/12/09 11:01:07 by abastida          #+#    #+#             */
+/*   Updated: 2022/12/09 14:05:12 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
 #include <unistd.h>
+#include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
-{
-	if (write(fd, &c, 1) == -1)
-		exit(0);
-}
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+//check_errors.c//
+
+void	ft_error(int n);
+void	is_num(char *argv);
+void	check_double(char **argv, int i);
+void	checking_error(char **argv);
+
+#endif

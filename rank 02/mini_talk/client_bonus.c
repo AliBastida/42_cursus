@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:26:23 by abastida          #+#    #+#             */
-/*   Updated: 2022/11/15 14:32:44 by abastida         ###   ########.fr       */
+/*   Updated: 2022/12/07 13:40:11 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	reciving_bytes(int signal)
 		i++;
 	if (signal == SIGUSR2)
 	{
-		write(1, "The signal is recieved\n", 26);
-		exit(0);
+		write(1, "The signal is recieved\n", 24);
+		exit(EXIT_FAILURE);
 	}
 }
 
@@ -45,7 +45,7 @@ void	sending_byte(int pid, char byte)
 		if (kill_failure < 0)
 		{
 			if (write(1, "Signal error\n", 14) == -1)
-				exit(0);
+				exit(EXIT_FAILURE);
 		}
 		usleep(300);
 		usleep(100);
@@ -63,6 +63,8 @@ int	main(int argc, char **argv)
 	signal(SIGUSR2, reciving_bytes);
 	if (argc == 3)
 	{
+		if (ft_atoi(argv[1]) < 1)
+			exit (0);
 		while (argv[2][i])
 		{
 			sending_byte(atoi(argv[1]), argv[2][i]);
@@ -72,7 +74,7 @@ int	main(int argc, char **argv)
 	}
 	else
 		if (write(1, "Invalid number of arguments\n", 29) == -1)
-			exit(0);
+			exit(EXIT_FAILURE);
 	while (1)
 		pause();
 	return (0);

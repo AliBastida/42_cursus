@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abastida <abastida@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 12:01:42 by abastida          #+#    #+#             */
-/*   Updated: 2022/11/17 10:40:41 by abastida         ###   ########.fr       */
+/*   Created: 2022/05/16 12:28:30 by abastida          #+#    #+#             */
+/*   Updated: 2022/05/19 15:16:35 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-void	ft_putchar_fd(char c, int fd)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	if (write(fd, &c, 1) == -1)
-		exit(0);
+	size_t	i;
+
+	i = 0;
+	while (i < len)
+	{
+		((unsigned char *) b)[i] = ((unsigned char) c);
+		i++;
+	}
+	return (b);
 }

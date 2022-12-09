@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abastida <abastida@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 12:01:42 by abastida          #+#    #+#             */
-/*   Updated: 2022/11/17 10:40:41 by abastida         ###   ########.fr       */
+/*   Created: 2022/06/01 10:44:20 by abastida          #+#    #+#             */
+/*   Updated: 2022/06/01 12:29:54 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
+#include <stdlib.h> 
 
-void	ft_putchar_fd(char c, int fd)
+char	*ft_strdup(const char *s1)
 {
-	if (write(fd, &c, 1) == -1)
-		exit(0);
+	size_t	len;
+	char	*scp;
+
+	len = ft_strlen(s1);
+	scp = malloc(sizeof(char) * (len + 1));
+	if (scp)
+	{
+		ft_memcpy(scp, s1, len + 1);
+		return (scp);
+	}
+	return (NULL);
+	free(scp);
 }

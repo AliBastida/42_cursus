@@ -1,59 +1,50 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    client.mk                                          :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abastida <abastida@student.42.fr>          +#+  +:+       +#+         #
+#    By: abastida <abastida@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/10 16:40:54 by abastida          #+#    #+#              #
-#    Updated: 2022/11/17 10:42:21 by abastida         ###   ########.fr        #
+#    Created: 2022/12/09 12:54:42 by abastida          #+#    #+#              #
+#    Updated: 2022/12/09 14:01:55 by abastida         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := client
-SRC := client.c
-NAME_BONUS := client_bonus
-SRC_BONUS := client_bonus.c
+NAME := push_swap
+SRC := check_errors.c
 OBJ := $(SRC:.c=.o)
-OBJ_BONUS := $(SRC_BONUS:.c=.o)
-#Esta es para que me cree los .o de los .c directamente
 DEP := $(SRC:.c=.d)
-DEP_BONUS := $(SRC_BONUS:.c=.d)
-
 CC := gcc
 CFLAGS := -Wall -Werror -Wextra -g -MMD -I libftprintf
 RM := rm -rf
-LIBS := libftprintf/libftprintf.a
+LIBS := libftprintf/libftprintf.a 
 LIBPATH := -L libftprintf -lftprintf
-INCLUDE := -I libftprintf
+HEADER := inc/
+INCLUDE := -I libftprintf -I $(HEADER)
 
-all: $(NAME)
+%.o: %.c
+	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+
+all: make_libs $(NAME)
 
 -include $(DEP)
-$(NAME): $(LIBS) $(OBJ)
+$(NAME): $(LIBS) $(OBJ) Makefile
 	$(CC) $(CFLAGS) $(LIBPATH) $(OBJ) -o $(NAME)
 
--include $(DEP_BONUS)
-$(NAME_BONUS): $(LIBS) $(OBJ_BONUS)
-	$(CC) $(CFLAGS) $(LIBPATH) $(OBJ_BONUS) -o $(NAME_BONUS)
-
-$(LIBS):
+make_libs:
 	$(MAKE) -C libftprintf
 
 clean:
 	$(RM) $(OBJ)
 	$(RM) $(DEP)
-	$(RM) $(OBJ_BONUS)
-	$(RM) $(DEP_BONUS)
 	$(MAKE) clean -C libftprintf
 
-fclean: 
+fclean:
 	$(MAKE) clean
 	$(RM) $(NAME)
-	$(RM) $(NAME_BONUS)
 	$(MAKE) fclean -C libftprintf
 
-re: 
+re:
 	$(MAKE) fclean
 	$(MAKE) all
 

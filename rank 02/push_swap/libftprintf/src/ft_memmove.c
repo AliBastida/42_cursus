@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abastida <abastida@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 12:01:42 by abastida          #+#    #+#             */
-/*   Updated: 2022/11/17 10:40:41 by abastida         ###   ########.fr       */
+/*   Created: 2022/05/25 13:36:13 by abastida          #+#    #+#             */
+/*   Updated: 2022/05/26 13:46:03 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
-#include <unistd.h>
 
-void	ft_putchar_fd(char c, int fd)
+void	*ft_memmove(void *dst, void const *src, size_t len)
 {
-	if (write(fd, &c, 1) == -1)
-		exit(0);
+	if ((dst == src) || (!len))
+		return (dst);
+	if (dst > src)
+	{
+		while (len)
+		{
+			((unsigned char *) dst)[len - 1] = ((unsigned char *) src)[len - 1];
+			len--;
+		}
+		return (dst);
+	}
+	ft_memcpy(dst, src, len);
+	return (dst);
 }

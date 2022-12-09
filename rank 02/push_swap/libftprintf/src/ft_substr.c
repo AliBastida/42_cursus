@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abastida <abastida@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 12:01:42 by abastida          #+#    #+#             */
-/*   Updated: 2022/11/17 10:40:41 by abastida         ###   ########.fr       */
+/*   Created: 2022/06/01 14:05:16 by abastida          #+#    #+#             */
+/*   Updated: 2022/06/08 15:22:29 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-void	ft_putchar_fd(char c, int fd)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	if (write(fd, &c, 1) == -1)
-		exit(0);
+	char			*ptr;
+	unsigned int	slen;
+
+	slen = ft_strlen (s);
+	if ((slen == 0) || (slen < start))
+	{
+		ptr = ft_strdup("");
+		return (ptr);
+	}
+	else if (len > slen - start)
+		len = slen - start;
+	ptr = malloc(sizeof(char) * (len + 1));
+	if (!ptr)
+		return (NULL);
+	ft_strlcpy(ptr, (char *)(s + start), len + 1);
+	return (ptr);
 }

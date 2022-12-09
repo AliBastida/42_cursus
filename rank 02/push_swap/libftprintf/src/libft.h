@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abastida <abastida@student.42barcel>       +#+  +:+       +#+        */
+/*   By: abastida <abastida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 12:07:27 by abastida          #+#    #+#             */
-/*   Updated: 2022/11/17 10:39:49 by abastida         ###   ########.fr       */
+/*   Created: 2022/05/10 11:16:05 by abastida          #+#    #+#             */
+/*   Updated: 2022/10/22 19:10:06 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
@@ -76,5 +75,4 @@ int		ft_printf(const char *str, ...);
 int		ft_puthexa_low(unsigned long num);
 int		ft_puthexa_upper(unsigned long num);
 int		ft_ptrhexa(unsigned long pointer);
-
 #endif
