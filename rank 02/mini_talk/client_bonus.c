@@ -24,7 +24,11 @@ void	reciving_bytes(int signal)
 	if (signal == SIGUSR2)
 	{
 		write(1, "The signal is recieved\n", 24);
+<<<<<<< HEAD
 		exit(EXIT_FAILURE);
+=======
+		exit(0);
+>>>>>>> 3ebfd169cb7b5b7aab13436aad92da260f7401c2
 	}
 }
 
