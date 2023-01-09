@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   check_num.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abastida <abastida@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/09 11:01:07 by abastida          #+#    #+#             */
-/*   Updated: 2023/01/09 13:59:53 by abastida         ###   ########.fr       */
+/*   Created: 2023/01/09 11:07:49 by abastida          #+#    #+#             */
+/*   Updated: 2023/01/09 13:59:50 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include "libft.h"
+#include "push_swap.h"
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-typedef struct s_struct
+void	check_num(char *s)
 {
-	int *sa;
-}t_struct;
-//check_errors.c//
+	int i;
 
-void	ft_error(int n);
-void	check_num(char *s);
-void	check_double(char **argv, int argc);
-void	checking_error(char **argv, int argc);
-
-#endif
+	i = 0;
+	while(s[i])
+	{
+		if ((ft_isdigit(s[i]) == 1) || (s[0] == '-' && ft_isdigit(s[i + 1] == 1)))
+			i++;
+		else
+			ft_error(1);
+	}
+}

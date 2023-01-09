@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 11:00:28 by abastida          #+#    #+#             */
-/*   Updated: 2022/12/09 14:21:10 by abastida         ###   ########.fr       */
+/*   Updated: 2023/01/09 14:02:25 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,63 +16,55 @@ void	ft_error(int n)
 {
 	if (n == 1)
 	{
-		write (2, "Error param number\n", 18);
-		exit (1);
-	}
-	if (n == 2)
-	{
-		write (2, "Not only numbers\n", 15);
-		exit(1);
-	}
-	if (n == 3)
-	{
-		write (2, "There are numbers duplicate\n", 27);
+		write (2, "Error\n", 5);
 		exit (1);
 	}
 }
 
-void	is_num(char *argv)
+void	check_double(char **argv, int argc)
 {
 	int i;
+	int j;
 
-	i = -1;
-	while (argv[++i])
+	i = 1;
+	j = i + 1;
+	while (i < argc - 1)
 	{
-		if ((argv[0] == '-') || (argv[0] == '+') 
-			|| ((argv[i] < '0') && (argv[i] > '9')))
-				ft_error(2);
+		j = i + 1;
+		while (argv[j])
+		{
+			if(ft_strncmp(argv[i], argv[j], 11) == 0)
+				ft_error(1);
+			else
+				j++;
+		}
+		i++;
 	}
 }
 
-void	check_double(char **argv, int i)
-{
-	int j;
-
-	j = i + 1;
-	while (argv[j])// strncmp
-		if (argv[i] == argv[j])
-			ft_error(3);
-		j++;
-}
-
-void	checking_error(char **argv)
+void	checking_error(char **argv, int argc)
 {
 	int i;
 
 	i = 0;
+	check_double(argv, argc);
 	while (argv[++i])
-	{
-		is_num(argv[i]);
-		check_double(argv, i);
-	}
+		check_num(argv[i]);
 }
 
 int	main(int argc, char **argv)
 {
+	t_struct *list;
+
+	list = malloc(sizeof(t_struct));
+	if (!list)
+		return(0);
 	if (argc < 2)
-		ft_error(1);
-	checking_error(argv);
+		exit (0);
+	checking_error(argv, argc);
 	return(0);
 }
 
-//se me queda atascado en un while!!!
+//de errores tengo que comprobar si es el int max o el int min.
+//tb tengo que comprobar si los numeros estan ordenados ya.
+

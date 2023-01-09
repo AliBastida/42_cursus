@@ -6,12 +6,12 @@
 #    By: abastida <abastida@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 12:54:42 by abastida          #+#    #+#              #
-#    Updated: 2022/12/09 14:01:55 by abastida         ###   ########.fr        #
+#    Updated: 2023/01/09 13:59:56 by abastida         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := push_swap
-SRC := check_errors.c
+SRC := check_errors.c check_num.c
 OBJ := $(SRC:.c=.o)
 DEP := $(SRC:.c=.d)
 CC := gcc
