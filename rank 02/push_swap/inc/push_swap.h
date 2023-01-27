@@ -21,11 +21,17 @@ typedef struct s_struct
 {
 	int *sa;
 }t_struct;
+
+
 //check_errors.c//
 
 void	ft_error(int n);
-void	check_num(char *s);
+void	check_if_ordered(char **av);
 void	check_double(char **argv, int argc);
 void	checking_error(char **argv, int argc);
+
+//check-num.c//
+
+void	check_num(char *s);
 
 #endif
