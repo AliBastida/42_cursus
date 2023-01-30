@@ -17,10 +17,10 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-typedef struct s_struct
+typedef struct s_list
 {
-	int *sa;
-}t_struct;
+
+}t_list;
 
 
 //check_errors.c//
@@ -33,5 +33,7 @@ void	checking_error(char **argv, int argc);
 //check-num.c//
 
 void	check_num(char *s);
+void	check_num_max_min(char **av);
+
 
 #endif

@@ -67,6 +67,7 @@ void	checking_error(char **argv, int argc)
 	while (argv[++i])
 	{
 		check_num(argv[i]);
+		check_num_max_min(argv);
 		check_if_ordered(argv);
 	}
 }
