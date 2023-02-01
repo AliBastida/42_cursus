@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 11:01:07 by abastida          #+#    #+#             */
-/*   Updated: 2023/01/09 13:59:53 by abastida         ###   ########.fr       */
+/*   Updated: 2023/02/01 19:24:51 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,13 @@ int main(int ac, char **av);
 //list_utils.c//
 
 t_master *new_node(char **av);
+void	add_back(t_master **stack_a, t_master *temp);
 
 //init.c//
+
 t_master	create_list(char **av);
+
+
 //check_errors.c//
 
 void	ft_error(int n);
