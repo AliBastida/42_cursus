@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME := push_swap
-SRC := check_errors.c check_num.c
+SRC := push_swap.c list_utils.c init.c check_errors.c check_num.c
 OBJ := $(SRC:.c=.o)
 DEP := $(SRC:.c=.d)
 CC := gcc

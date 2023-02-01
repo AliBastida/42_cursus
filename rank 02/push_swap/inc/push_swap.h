@@ -17,12 +17,25 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-typedef struct s_list
+typedef struct s_master
 {
+	int value;
+	int index;
+	struct s_master *next;
+	struct s_master *prev;
+	struct s_master *stack_a;
+	struct s_master *stack_b;
+}t_master;
 
-}t_list;
+//push_swap.c//
+int main(int ac, char **av);
 
+//list_utils.c//
 
+t_master *new_node(char **av);
+
+//init.c//
+t_master	create_list(char **av);
 //check_errors.c//
 
 void	ft_error(int n);
@@ -30,7 +43,7 @@ void	check_if_ordered(char **av);
 void	check_double(char **argv, int argc);
 void	checking_error(char **argv, int argc);
 
-//check-num.c//
+//check_num.c//
 
 void	check_num(char *s);
 void	check_num_max_min(char **av);

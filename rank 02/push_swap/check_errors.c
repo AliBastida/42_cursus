@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
 
 void	ft_error(int n)
 {
@@ -71,21 +70,4 @@ void	checking_error(char **argv, int argc)
 		check_if_ordered(argv);
 	}
 }
-
-int	main(int argc, char **argv)
-{
-	t_struct *list;
-
-	list = malloc(sizeof(t_struct));
-	if (!list)
-		return(0);
-	if (argc < 2)
-		exit (0);
-	checking_error(argv, argc);
-
-	return(0);
-}
-
-//de errores tengo que comprobar si es el int max o el int min.
-//tb tengo que comprobar si los numeros estan ordenados ya.
 
