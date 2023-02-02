@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 13:31:07 by abastida          #+#    #+#             */
-/*   Updated: 2023/02/01 19:32:25 by abastida         ###   ########.fr       */
+/*   Updated: 2023/02/02 12:30:06 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	add_back(t_master **stack_a, t_master *temp)
 	{
 		while(temp_node->next != NULL)
 		{
-			 temp_node->next = temp_node;
+			 temp_node = temp_node->next;				//tengo que comprobar que esta funcion esta bien porque me he hecho un lio con las vv temp_node y temp
 		}
 		temp_node->next = temp;
 	}
