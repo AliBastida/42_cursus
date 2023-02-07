@@ -12,6 +12,16 @@
 
 #include "push_swap.h"
 
+t_master *ft_last_list(t_master **stack_a)
+{
+	t_master *last;
+	last = *stack_a;
+	while(last->next != NULL)
+	{
+		last = last->next;
+	}
+	return(last);
+}
 t_master *new_node(char **av)
 {
 	t_master *num;
@@ -27,19 +37,23 @@ t_master *new_node(char **av)
 	return(num);
 }
 
-void	add_back(t_master **stack_a, t_master *temp)
+void	add_back(t_master **stack_a, t_master *new)
 {
-	t_master *temp_node;
+	t_master *temp_node; // lo usamos solo como iterador
 
 	temp_node = *stack_a;
-	if(stack_a == NULL)
-		temp = stack_a;
+	if(*stack_a == NULL)
+		*stack_a = new;
 	else
 	{
-		while(temp_node->next != NULL)
+		temp_node = ft_last_list(stack_a);
+		
+		/*while(temp_node->next != NULL)
 		{
 			temp_node = temp_node->next;
-		}
-		temp_node->next = temp_node;
+		} //hacer una funcion con este while (ft_last) para saber cual es el ultimo nodo de la lista, y que me retorne un puntero a ese nodo. */
+		temp_node->next = new;
+		new->prev = temp_node;
 	}
 }
+

@@ -12,16 +12,17 @@
 
 #include "push_swap.h"
 
-t_master create_list(char **av)
+t_master *create_list(char **av)
 {
 	int i;
 	t_master *temp;
+	t_master *stack_a;
 
 	i = 2;
-	stack_a = new_node(av[1]);
+	stack_a = new_node(&av[1]);
 	while(av[i])
 	{
-		temp = new_node(av[i])
+		temp = new_node(&av[i]);
 			if(!temp)
 				exit(1);
 		add_back(&stack_a, temp);
