@@ -47,11 +47,6 @@ void	add_back(t_master **stack_a, t_master *new)
 	else
 	{
 		temp_node = ft_last_list(stack_a);
-		
-		/*while(temp_node->next != NULL)
-		{
-			temp_node = temp_node->next;
-		} //hacer una funcion con este while (ft_last) para saber cual es el ultimo nodo de la lista, y que me retorne un puntero a ese nodo. */
 		temp_node->next = new;
 		new->prev = temp_node;
 	}

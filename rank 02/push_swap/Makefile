@@ -15,7 +15,7 @@ SRC := push_swap.c list_utils.c init.c check_errors.c check_num.c
 OBJ := $(SRC:.c=.o)
 DEP := $(SRC:.c=.d)
 CC := gcc
-CFLAGS := -Wall -Werror -Wextra -g -MMD -I inc/
+CFLAGS := -g3 -Wall -Werror -Wextra -g -MMD -I inc/
 RM := rm -rf
 LIBS := libftprintf/libftprintf.a 
 LIBPATH := -L libftprintf -lftprintf

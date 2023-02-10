@@ -11,6 +11,24 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+//en esta funcion creo los nodos y los voy enlazando al final.
+
+void put_index(t_master node, t_master **stack_a)
+{
+	(void)node;
+	int counter_index;
+	t_master *temp_node;
+
+	counter_index = 1;
+	temp_node = *stack_a;
+	while(temp_node != NULL)
+	{
+		temp_node = temp_node->next;
+		counter_index++;
+	}
+
+
+}
 
 t_master *create_list(char **av)
 {
@@ -28,6 +46,8 @@ t_master *create_list(char **av)
 		add_back(&stack_a, temp);
 		i++;
 	}
+	stack_a->length_list = i - 1;
+	printf("length_list is: %d\n", stack_a->length_list);
 	//crear una funcion que ponga los indices de cada nodo.
-	return(&stack_a);
+	return(stack_a);
 }

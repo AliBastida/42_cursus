@@ -12,6 +12,9 @@
 
 #include "push_swap.h"
 
+//esta funcion me sirve para printear la lista que voy creando, el nodo anterior y el siguiente.
+//Gracias Sebas!!
+
 void print_list(t_master **stack_a)
 {
 	t_master *temp;
@@ -33,13 +36,15 @@ void print_list(t_master **stack_a)
 }
 int	main(int ac, char **av)
 {
-	t_master *num;
+	t_master *stack_a = NULL;
+//	t_master *stack_b = NULL;
 
 	if(ac < 2)
 		exit(0);
-	checking_error(av, ac);
-	num = create_list(av);
-	print_list(&num);
+	else
+		checking_error(av, ac);
+		stack_a = create_list(av);
+		print_list(&stack_a);
 	return(0);
 }
 

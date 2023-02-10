@@ -52,9 +52,11 @@ void	check_if_ordered(char **av)
 
 	i = 1;
 	while ((av[i]) && (ft_atoi(av[i-1]) < ft_atoi(av[i])))
+	{
 		i++;
+	}
 	if (av[i] == NULL)
-		ft_error(2);
+		ft_error(1);
 }
 
 void	checking_error(char **argv, int argc)

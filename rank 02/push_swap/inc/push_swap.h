@@ -21,23 +21,22 @@ typedef struct s_master
 {
 	int value;
 	int index;
+	int length_list;
 	struct s_master *next;
 	struct s_master *prev;
-	struct s_master *stack_a;
-	struct s_master *stack_b;
 }t_master;
 
 //push_swap.c//
 int main(int ac, char **av);
 
 //list_utils.c//
-
 t_master *new_node(char **av);
 void	add_back(t_master **stack_a, t_master *new);
 t_master *ft_last_list(t_master **stack_a);
 
 //init.c//
 t_master	*create_list(char **av);
+
 //check_errors.c//
 
 void	ft_error(int n);
