@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 11:01:07 by abastida          #+#    #+#             */
-/*   Updated: 2023/02/01 19:24:51 by abastida         ###   ########.fr       */
+/*   Updated: 2023/02/10 15:58:39 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ typedef struct s_master
 	struct s_master *next;
 	struct s_master *prev;
 }t_master;
+
+typedef struct s_stack
+{
+	t_master *a;
+	t_master *b;
+}t_stack;
 
 //push_swap.c//
 int main(int ac, char **av);
