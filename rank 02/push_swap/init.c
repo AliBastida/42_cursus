@@ -6,48 +6,56 @@
 /*   By: abastida <abastida@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 13:27:17 by abastida          #+#    #+#             */
-/*   Updated: 2023/02/10 16:01:34 by abastida         ###   ########.fr       */
+/*   Updated: 2023/02/12 10:57:54 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//en esta funcion creo los nodos y los voy enlazando al final.
 
-void put_index(t_master node, t_master **stack_a)
+void put_index(t_master *stack_a)
 {
-	(void)node;
-	int counter_index;
-	t_master *temp_node;
+	t_master *compare;
+	t_master *temp;
+	int index;
+	int counter;
 
-	counter_index = 1;
-	temp_node = *stack_a;
-	while(temp_node != NULL)
+	compare = stack_a;
+	temp = stack_a;
+	counter = 0;
+	while(temp != NULL && compare != NULL)
 	{
-		temp_node = temp_node->next;
-		counter_index++;
+		index = 0;
+		while(counter < stack_a->length_list)
+		{
+			if(temp->value > compare->value)
+				index++;
+			compare = compare->next;
+		}
+		temp->index = index;
+		temp = temp->next;
+		counter++;
 	}
-
-
 }
 
-t_master *create_list(char **av)
+//en esta funcion creo los nodos y los voy enlazando al final.
+t_master *create_list(t_stack *a, char **av)
 {
 	int i;
 	t_master *temp;
-	t_master *stack_a;
 
 	i = 2;
-	stack_a = new_node(&av[1]);
+	a = new_node(&av[1]);
 	while(av[i])
 	{
 		temp = new_node(&av[i]);
 			if(!temp)
 				exit(1);
-		add_back(&stack_a, temp);
+		add_back(&a, temp);
 		i++;
 	}
-	stack_a->length_list = i - 1;
-	printf("length_list is: %d\n", stack_a->length_list);
+	a->length_list = i - 1;
+	printf("length_list is: %d\n", a->length_list);
+	put_index(a);
 	//crear una funcion que ponga los indices de cada nodo.
-	return(stack_a);
+	return(a);
 }

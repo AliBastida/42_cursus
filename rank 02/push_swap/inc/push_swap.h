@@ -6,7 +6,7 @@
 /*   By: abastida <abastida@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 11:01:07 by abastida          #+#    #+#             */
-/*   Updated: 2023/02/10 15:58:39 by abastida         ###   ########.fr       */
+/*   Updated: 2023/02/12 10:59:11 by abastida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	add_back(t_master **stack_a, t_master *new);
 t_master *ft_last_list(t_master **stack_a);
 
 //init.c//
-t_master	*create_list(char **av);
+t_master	*create_list(t_stack *a, char **av);
 
 //check_errors.c//
 
